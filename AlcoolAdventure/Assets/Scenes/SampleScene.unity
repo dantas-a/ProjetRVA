@@ -2322,7 +2322,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 247521454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db166893fc7f7ba4db84de1f4bde57ed, type: 3}
+  m_Script: {fileID: 11500000, guid: e8b630b43740b473aa087f0c93e77932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
@@ -8413,6 +8413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb193c38fe2fdfe8bbf30a3053146a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: {fileID: 0}
+  playerg: {fileID: 0}
 --- !u!65 &1068900428
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14265,6 +14267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb193c38fe2fdfe8bbf30a3053146a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: {fileID: 0}
+  playerg: {fileID: 0}
 --- !u!1001 &2018865756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15182,6 +15186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb193c38fe2fdfe8bbf30a3053146a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: {fileID: 0}
+  playerg: {fileID: 0}
 --- !u!65 &2129139059
 BoxCollider:
   m_ObjectHideFlags: 0
