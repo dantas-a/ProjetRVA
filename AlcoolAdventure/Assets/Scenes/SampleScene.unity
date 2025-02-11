@@ -6512,6 +6512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949534c1da0c255483de8ccebec1db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanMove: 1
   walkSpeed: 5
   gravity: 30
   lookSpeedX: 2
@@ -6584,7 +6585,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819084720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92a60119342e755408d0ca550826ce64, type: 3}
   m_Name: 
@@ -12196,6 +12197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2bf4cf175dcec44bef54ef61496265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NameNPC: Parler au Bandit
+  player: {fileID: 819084724}
+  dialogueCanvas: {fileID: 868202575}
+  speakerText: {fileID: 998634569}
+  dialogueText: {fileID: 1276518326}
 --- !u!143 &1456750238
 CharacterController:
   m_ObjectHideFlags: 0
@@ -12221,6 +12227,24 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.95, z: 0}
+--- !u!4 &1456750240 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
+  m_PrefabInstance: {fileID: 1901528492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1456750241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456750236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eea8089fbd13d84a8ec0dce7316549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyNPC: {fileID: 1456750240}
 --- !u!1 &1459457287
 GameObject:
   m_ObjectHideFlags: 0
@@ -14389,15 +14413,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 513.11914
+      value: 436.81
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.023280382
+      value: 10.34
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 537.09283
+      value: 629.76
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14437,6 +14461,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1456750237}
+    - targetCorrespondingSourceObject: {fileID: 100010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1456750241}
   m_SourcePrefab: {fileID: 100100000, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
 --- !u!1001 &1920692166
 PrefabInstance:

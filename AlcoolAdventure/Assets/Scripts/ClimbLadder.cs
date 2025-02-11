@@ -4,13 +4,13 @@ public class ClimbLadder : MonoBehaviour
 {  
     void OnTriggerEnter(Collider other) {
     	if(other.CompareTag("Player")) {
-    		other.isClibbing = true;
+    		//other.isClibbing = true;
     	}
     }
     
     void OnTriggerExit(Collider other) {
     	if(other.CompareTag("Player")) {
-    		other.isClibbing = false;
+    		//other.isClibbing = false;
     	}
     }
 }
