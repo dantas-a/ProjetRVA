@@ -8,7 +8,11 @@ public class Pause : MonoBehaviour
 
     void Update(){
         if(Input.GetKeyDown(KeyCode.Escape)){
-            PauseCanvas.SetActive(true);
+            if(!PauseCanvas.activeSelf) {
+                PauseCanvas.SetActive(true);
+            } else {
+                PauseCanvas.SetActive(false);
+            }
         }
     }
 
