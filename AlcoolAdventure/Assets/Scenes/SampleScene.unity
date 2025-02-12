@@ -2003,20 +2003,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.79999995, y: 3.0037167, z: 0.4}
-  m_Center: {x: 0, y: 1.5018202, z: -0.2}
---- !u!114 &203223164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203223157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3fe69475259028ebbc3669dc2386a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Size: {x: 0.79999995, y: 2, z: 0.2}
+  m_Center: {x: 0, y: 2.5, z: -0.3}
 --- !u!1 &209794250
 GameObject:
   m_ObjectHideFlags: 0
@@ -6493,6 +6481,7 @@ GameObject:
   - component: {fileID: 819084722}
   - component: {fileID: 819084721}
   - component: {fileID: 819084725}
+  - component: {fileID: 819084726}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6597,6 +6586,19 @@ MonoBehaviour:
   - Boubakar
   dialogueContent:
   - dantas is gay and swag
+--- !u!114 &819084726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819084720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3fe69475259028ebbc3669dc2386a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedUpDown: 6
 --- !u!4 &830750228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4349549203921020, guid: 41c2416439f912f4e89bd6b1167f45e5, type: 3}
@@ -9963,7 +9965,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: House5
       objectReference: {fileID: 0}
+    - target: {fileID: 5054321805867669871, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.655
+      objectReference: {fileID: 0}
     - target: {fileID: 5059946282814559453, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151637319090598308, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
@@ -10014,6 +10024,10 @@ PrefabInstance:
     - target: {fileID: 5396223506506550787, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579782143073092565, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
       objectReference: {fileID: 0}
     - target: {fileID: 5675868016937693404, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
       propertyPath: m_Convex
@@ -10081,9 +10095,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5579782143073092565, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 203223163}
-    - targetCorrespondingSourceObject: {fileID: 5579782143073092565, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 203223164}
     - targetCorrespondingSourceObject: {fileID: 5900771869383995350, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 74028260}
