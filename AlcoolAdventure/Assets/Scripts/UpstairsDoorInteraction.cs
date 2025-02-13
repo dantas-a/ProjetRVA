@@ -39,7 +39,7 @@ public class UpstairsDoor : MonoBehaviour, IInteractable {
     }
 
     public string GetDescription() {
-        if (isOpen) return "Close the door";
-        return "Open the door";
+        if (isOpen) return "Fermer la porte";
+        return "Ouvrir la porte";
     }
 }

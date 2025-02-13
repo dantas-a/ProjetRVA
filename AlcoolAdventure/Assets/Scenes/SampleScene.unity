@@ -4054,6 +4054,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3904009868381710741, guid: 2dfc1a6cc73450344866ea12b9f2d021, type: 3}
   m_PrefabInstance: {fileID: 1066247408}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &506328794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4893311668768317191, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
+  m_PrefabInstance: {fileID: 1220133522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &506328799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506328794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4017fd4d63a92d389db8e1607bb98a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smooth: 10
+  pivotOffset: {x: 0, y: 0, z: 0}
+--- !u!64 &506328800
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506328794}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3414342321823924675, guid: e29fb3dedd6af1f4aa42dac4a195c12f, type: 3}
 --- !u!1 &510381791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5550,7 +5591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &694296820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10168,13 +10209,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8434667636236320655, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3065245545394114730, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 323242095}
+    - targetCorrespondingSourceObject: {fileID: 4893311668768317191, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 506328799}
+    - targetCorrespondingSourceObject: {fileID: 4893311668768317191, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 506328800}
     - targetCorrespondingSourceObject: {fileID: 5579782143073092565, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 203223163}
