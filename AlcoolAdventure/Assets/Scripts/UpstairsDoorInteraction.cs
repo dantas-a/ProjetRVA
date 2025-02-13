@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class UpstairsDoor : MonoBehaviour, IInteractable {
 
+    public bool canBeInteractedWith { get; set; } = true; //nécessite d'être en public car hérite de la propriété de l'interface (??)
     public float smooth = 10f; // Vitesse de rotation
     private float targetYRotation; // Rotation cible autour de l'axe Y
     private float defaultYRotation; // Rotation par défaut (position fermée)
     private bool isOpen; // État de la porte
 
     // Décalage du pivot local (coin en bas à gauche de la porte)
-    public Vector3 pivotOffset = new Vector3(0f, 0f, 0f); // Ajustez selon la taille de votre porte
+    public Vector3 pivotOffset = new Vector3(0f, 0f, 0f); // Ajustez selon la taille de la porte
 
     void Start() {
         // Enregistre la rotation initiale de la porte

@@ -28,12 +28,15 @@ public class PlayerInteraction : MonoBehaviour
 
             if (interactable != null)
             {
-                hitSomething = true;
-                interactionText.text = interactable.GetDescription();
-
-                if (Input.GetKeyDown(KeyCode.E))
+                if (interactable.canBeInteractedWith)
                 {
-                    interactable.Interact();
+                    hitSomething = true;
+                    interactionText.text = interactable.GetDescription();
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        interactable.Interact();
+                    }
                 }
             }
         }

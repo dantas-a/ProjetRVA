@@ -3,6 +3,8 @@ using UnityEngine;
 using TMPro;
 
 public class NPCInteract : MonoBehaviour, IInteractable {
+    
+    public bool canBeInteractedWith { get; set; } = true; //nécessite d'être en public car hérite de la propriété de l'interface (??)
     [SerializeField] private string NameNPC;
     [SerializeField] private Transform player;
     private LookAtPlayer lookAtPlayer;
