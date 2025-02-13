@@ -3,6 +3,8 @@ using UnityEngine;
 public class FirstPersonController : MonoBehaviour
 {
 	public bool CanMove /*{ get; private set; }*/ = true;
+
+	public bool isDrinking = false;
 	
 	[Header("Movement Parameters")]
 	[SerializeField] private float walkSpeed = 3.0f;
@@ -73,8 +75,11 @@ public class FirstPersonController : MonoBehaviour
 	private void HandleMovementAnimation() {
 		sideSpeed = walkSpeed*Input.GetAxis("Horizontal");
 		forwardSpeed = walkSpeed*Input.GetAxis("Vertical");
+
 		characterAnimator.SetFloat("forwardSpeed", forwardSpeed);
 		characterAnimator.SetFloat("sideSpeed", sideSpeed);
+		characterAnimator.SetBool("canMove", CanMove);
+		characterAnimator.SetBool("isDrinking", isDrinking);
 	}
 
 }

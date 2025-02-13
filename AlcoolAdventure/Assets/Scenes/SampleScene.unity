@@ -2848,6 +2848,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154810693}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &159396796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1670697701759372, guid: 41c2416439f912f4e89bd6b1167f45e5, type: 3}
+  m_PrefabInstance: {fileID: 368350412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &161547285
 GameObject:
   m_ObjectHideFlags: 0
@@ -5764,7 +5769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1670697701759372, guid: 41c2416439f912f4e89bd6b1167f45e5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4349549203921020, guid: 41c2416439f912f4e89bd6b1167f45e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11391,6 +11396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanMove: 1
+  isDrinking: 0
   walkSpeed: 5
   gravity: 30
   lookSpeedX: 2
@@ -11507,7 +11513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEmpty: 0
   drinkAnimator: {fileID: 0}
-  handJug: {fileID: 0}
+  handJug: {fileID: 159396796}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -26663,7 +26669,7 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b2d890fec696b4f90a50d6bb68b786ce, type: 2}
+      objectReference: {fileID: 9100000, guid: d3b412a4a3697df4f94fa8c5fa203741, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 100008, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
