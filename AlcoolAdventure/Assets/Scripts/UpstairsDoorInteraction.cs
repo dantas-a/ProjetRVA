@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UpstairsDoor : MonoBehaviour, IInteractable {
 
-    public bool canBeInteractedWith { get; set; } = true; //nécessite d'être en public car hérite de la propriété de l'interface (??)
+    public bool canBeInteractedWith { get; set; } = true;
     public float smooth = 10f; // Vitesse de rotation
     private float targetYRotation; // Rotation cible autour de l'axe Y
     private float defaultYRotation; // Rotation par défaut (position fermée)
