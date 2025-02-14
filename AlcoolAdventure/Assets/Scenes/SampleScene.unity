@@ -19181,7 +19181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b86921965569b40a984ab00075f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
   interactions:
   - speakerNames:
     - Boubakar
@@ -19191,6 +19190,10 @@ MonoBehaviour:
     - Yo ahahha im gay
     - Yo ahahha im gayer
     - u fucking gay
+    dialogueVoices:
+    - {fileID: 8300000, guid: e5951ba09eaced06aafc244802990f1d, type: 3}
+    - {fileID: 8300000, guid: 28841ef3359590e0e97647dd33e451bb, type: 3}
+    - {fileID: 8300000, guid: 28841ef3359590e0e97647dd33e451bb, type: 3}
     endInteractionEvent: fin diag
   - speakerNames:
     - boubakar
@@ -19198,12 +19201,112 @@ MonoBehaviour:
     dialogueLines:
     - deuxieme discusion
     - deuxieme parlage dans la deuxieme interaction
+    dialogueVoices:
+    - {fileID: 8300000, guid: 2aa71221218f97415ab86c6fceca80e8, type: 3}
+    - {fileID: 8300000, guid: 1a16280ee7de2ad02bcbe02ad8caf363, type: 3}
     endInteractionEvent: retour int1
   triggers:
   - eventName: retour int1
     newDialogueIndex: 0
   - eventName: fin diag
     newDialogueIndex: 1
+--- !u!82 &1456750245
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456750236}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.037
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1459457287
 GameObject:
   m_ObjectHideFlags: 0
@@ -23275,6 +23378,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1456750243}
+    - targetCorrespondingSourceObject: {fileID: 100010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1456750245}
   m_SourcePrefab: {fileID: 100100000, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
 --- !u!1 &1914506834
 GameObject:

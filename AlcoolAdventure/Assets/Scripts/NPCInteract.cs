@@ -52,6 +52,7 @@ public class NPCInteract : MonoBehaviour, IInteractable {
             dialogueCanvas.SetActive(true);
             speakerText.text = nameNPC;
             dialogueText.text = textNPC;
+            npc.PlayDialogueAudio();
         }
     }
 

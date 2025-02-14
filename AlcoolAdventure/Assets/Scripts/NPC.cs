@@ -6,12 +6,11 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    public string id; // affichage interaction e
-
     [System.Serializable] public class DialogueInteraction
     {
         public List<string> speakerNames; // Liste des noms qui parlent
         public List<string> dialogueLines; // Liste des répliques
+        public List<AudioClip> dialogueVoices; // Liste des fichiers audio associes
         public string endInteractionEvent; // Nom de l’événement déclenché à la fin de l’interaction
     }
     public List<DialogueInteraction> interactions;
@@ -26,8 +25,12 @@ public class NPC : MonoBehaviour
 
     public List<DialogueTrigger> triggers; // Liste des événements qui affectent ce PNJ
 
+    private AudioSource audioSource;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         foreach (var trigger in triggers)
         {
             EventSystemManager.Instance.SubscribeToEvent(trigger.eventName, () => ChangeInteraction(trigger.newDialogueIndex));
@@ -52,6 +55,19 @@ public class NPC : MonoBehaviour
         else
         {
             EndDialogue();
+        }
+    }
+
+    public void PlayDialogueAudio()
+    {
+        if (audioSource != null && interactions[interactionIndex].dialogueVoices.Count > dialogueIndex)
+        {
+            AudioClip clip = interactions[interactionIndex].dialogueVoices[dialogueIndex];
+            if (clip != null)
+            {
+                audioSource.Stop();
+                audioSource.PlayOneShot(clip);
+            }
         }
     }
 
