@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,22 +7,48 @@ public class Pause : MonoBehaviour
     [SerializeField]
     private GameObject PauseCanvas;
     private FirstPersonController playerMovement;
+    private bool isPaused = false;
 
     public void Awake()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
     }
 
-    void Update(){
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            if(!PauseCanvas.activeSelf) {
-                playerMovement.CanMove = false;
-                PauseCanvas.SetActive(true);
-            } else {
-                playerMovement.CanMove = true;
-                PauseCanvas.SetActive(false);
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused)
+            {
+                PauseGame();
+            }
+            else
+            {
+                ResumeGame();
             }
         }
+    }
+
+    private void PauseGame()
+    {
+        isPaused = true;
+        playerMovement.CanMove = false;
+        PauseCanvas.SetActive(true);
+
+        // Libérer la souris
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void ResumeGame()
+    {
+        isPaused = false;
+        playerMovement.CanMove = true;
+        PauseCanvas.SetActive(false);
+
+        // Verrouiller la souris pour le mode FPS
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void ReturnMainMenu() {
