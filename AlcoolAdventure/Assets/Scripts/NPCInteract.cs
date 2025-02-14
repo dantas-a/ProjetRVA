@@ -8,20 +8,22 @@ public class NPCInteract : MonoBehaviour, IInteractable {
     [SerializeField] private string NameNPC;
     [SerializeField] private Transform player;
     private LookAtPlayer lookAtPlayer;
+    [SerializeField] private NPC npc;
 
-    private Animator animator;
+    //private Animator animator;
     private FirstPersonController playerMovement;
     
-    private int step=0;
     [SerializeField] private GameObject dialogueCanvas;
 
     [SerializeField] private TMP_Text speakerText;
 
     [SerializeField] private TMP_Text dialogueText;
 
+    private bool isTalking;
+
     public void Awake()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         lookAtPlayer = GetComponent<LookAtPlayer>();
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
     }
@@ -31,47 +33,26 @@ public class NPCInteract : MonoBehaviour, IInteractable {
         return NameNPC;
     }
     public void Interact(){
-        lookAtPlayer.lookat(player.position);
+        if (!npc.EndDialogue()) {
+            lookAtPlayer.lookat(player.position);
 
-        animator.SetTrigger("Talk");
+            //animator.SetTrigger("Talk");
 
-        if (step == 0){
-            showCanvaDialogue("Boubakar","MDRRR je craque mentalement");
-            step += 1;
+            showCanvaDialogue(npc.GetNameNPCTalking(),npc.GetDialogue());
+            npc.ShowNextDialogue();
         } else {
             hideCanvaDialogue();
         }
     }
 
     private void showCanvaDialogue(string nameNPC, string textNPC){
-
-        if (playerMovement == null)
-        {
-            Debug.LogError("playerMovement est null.");
+        if (nameNPC != null && textNPC != null) {   
+            //Time.timeScale = 0f;
+            playerMovement.CanMove = false;
+            dialogueCanvas.SetActive(true);
+            speakerText.text = nameNPC;
+            dialogueText.text = textNPC;
         }
-        if (dialogueCanvas == null)
-        {
-            Debug.LogError("dialogueCanvas est null.");
-        }
-        if (speakerText == null)
-        {
-            Debug.LogError("speakerText est null.");
-        }
-        if (dialogueText == null)
-        {
-            Debug.LogError("dialogueText est null.");
-        }
-
-        if (playerMovement == null || dialogueCanvas == null || speakerText == null || dialogueText == null)
-        {
-            return;
-        }
-
-        //Time.timeScale = 0f;
-        playerMovement.CanMove = false;
-        dialogueCanvas.SetActive(true);
-        speakerText.text = nameNPC;
-        dialogueText.text = textNPC;
     }
 
     private void hideCanvaDialogue(){
