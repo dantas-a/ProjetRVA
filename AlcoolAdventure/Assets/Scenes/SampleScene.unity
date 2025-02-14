@@ -3080,8 +3080,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.79999995, y: 2, z: 0.05}
-  m_Center: {x: 0, y: 2.6, z: -0.4}
+  m_Size: {x: 0.79999995, y: 3.66, z: 0.42}
+  m_Center: {x: 0, y: 2.09, z: -0.2}
+--- !u!114 &203223168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203223157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4566b58c1e73245b06456a2460320c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lad: {fileID: 819084727}
 --- !u!1 &203624670
 GameObject:
   m_ObjectHideFlags: 0
@@ -10204,7 +10217,7 @@ GameObject:
   - component: {fileID: 819084722}
   - component: {fileID: 819084721}
   - component: {fileID: 819084725}
-  - component: {fileID: 819084726}
+  - component: {fileID: 819084727}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10310,7 +10323,7 @@ MonoBehaviour:
   - Boubakar
   dialogueContent:
   - dantas is gay and swag
---- !u!114 &819084726
+--- !u!114 &819084727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10319,10 +10332,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 819084720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3fe69475259028ebbc3669dc2386a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 63b218283ca4b69428ced836c3a8e2b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedUpDown: 6
+  climbUp: 1
+  smooth: 10
+  moveDuration: 2
+  rotationSpeed: 5
+  startOnAwake: 0
+  targetPosition1: {x: 526.5, y: 3.116016, z: 538.4117}
+  targetRotation1: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
+  targetPosition2: {x: 525.5, y: 6.13016, z: 538.4117}
+  targetRotation2: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
 --- !u!4 &830750228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4349549203921020, guid: 41c2416439f912f4e89bd6b1167f45e5, type: 3}
@@ -15845,6 +15866,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5579782143073092565, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 203223163}
+    - targetCorrespondingSourceObject: {fileID: 5579782143073092565, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 203223168}
     - targetCorrespondingSourceObject: {fileID: 5900771869383995350, guid: 82a4a3ca54c4d394db3fe251c0320a65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 74028260}
@@ -19022,7 +19046,7 @@ MonoBehaviour:
     - deuxieme parlage dans la deuxieme interaction
     endInteractionEvent: retour int1
   triggers:
-  - eventName: retour1
+  - eventName: retour int1
     newDialogueIndex: 0
   - eventName: fin diag
     newDialogueIndex: 1
