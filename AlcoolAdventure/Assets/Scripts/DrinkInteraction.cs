@@ -43,7 +43,7 @@ public class Jug : MonoBehaviour, IInteractable {
         drinkAnimator.SetBool("canMove", false);
         handJug.SetActive(!handJug.activeSelf); // Fait apparaître la tasse dans la main du joueur
         gameObject.GetComponent<Renderer>().enabled = false;// Fait disparaître la tasse de la table
-        cameraMovementCinematic.StartMovement();
+        cameraMovementCinematic.StartMovement();    // Fait bouger la caméra
         
         drinkAnimator.SetTrigger("drinkTrigger"); // Déclenche l'animation de boisson
 
