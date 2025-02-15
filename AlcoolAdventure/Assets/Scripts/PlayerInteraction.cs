@@ -26,7 +26,28 @@ public class PlayerInteraction : MonoBehaviour
         {
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
 
-            if (interactable != null)
+            if (interactable != null && !(interactable is Jug))
+            {
+                if (interactable.canBeInteractedWith)
+                {
+                    hitSomething = true;
+                    interactionText.text = interactable.GetDescription();
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        interactable.Interact();
+                    }
+                }
+            }
+        }
+
+
+        // Cas particulier pour la tasse
+        if (Physics.Raycast(ray, out hit, 0.8f))
+        {
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+
+            if (interactable != null && (interactable is Jug))
             {
                 if (interactable.canBeInteractedWith)
                 {
@@ -44,3 +65,5 @@ public class PlayerInteraction : MonoBehaviour
         interactionUI.SetActive(hitSomething);
     }
 }
+
+

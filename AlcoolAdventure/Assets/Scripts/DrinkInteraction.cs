@@ -5,16 +5,19 @@ using UnityEngine;
 public class Jug : MonoBehaviour, IInteractable {
 
     public bool canBeInteractedWith { get; set; } = true;
-    public bool isEmpty = false;
-
+    public bool isEmpty  = false;
 
     private FirstPersonController playerMovement;
-    private Animator drinkAnimator;
+    private Animator drinkAnimator; 
+    private CameraMovementCinematic cameraMovementCinematic;
+
     [SerializeField] private GameObject handJug;
+
 
     void Awake() {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
-        drinkAnimator = playerMovement.GetComponentInChildren<Animator>();
+        drinkAnimator = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>();
+        cameraMovementCinematic = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovementCinematic>();
     }
 
     void Update() {
@@ -26,14 +29,25 @@ public class Jug : MonoBehaviour, IInteractable {
     }
 
     private void Drink()
-    {
+    {   
+        if (playerMovement == null){
+            Debug.Log("Pas de playerMovement");
+        }
+        if (drinkAnimator == null){
+            Debug.Log("pas de drink animator");
+        }
+        if (cameraMovementCinematic == null){
+            Debug.Log("pas de  cameraMovementCinematic");
+        }
         playerMovement.CanMove = false; // Empêche les mouvements de caméra et du joueur
-        playerMovement.isDrinking = true; // Passe à l'état "boire"
+        drinkAnimator.SetBool("canMove", false);
         handJug.SetActive(!handJug.activeSelf); // Fait apparaître la tasse dans la main du joueur
         gameObject.GetComponent<Renderer>().enabled = false;// Fait disparaître la tasse de la table
+        cameraMovementCinematic.StartMovement();
+        
+        drinkAnimator.SetTrigger("drinkTrigger"); // Déclenche l'animation de boisson
 
-        // Démarre la coroutine pour attendre la fin de l'animation
-        StartCoroutine(WaitForEndOfAnimation("ToIdle"));
+        StartCoroutine(WaitForEndOfAnimation("ToIdle"));    // Démarre la coroutine pour attendre la fin de l'animation
     }
 
     private IEnumerator WaitForEndOfAnimation(string stateName)
@@ -51,13 +65,15 @@ public class Jug : MonoBehaviour, IInteractable {
         }
 
         // Une fois l'animation terminée, exécute le reste du code
+        cameraMovementCinematic.StartMovement();
         gameObject.GetComponent<Renderer>().enabled = true;
         handJug.SetActive(!handJug.activeSelf);
         isEmpty = true;
-        GameLogic.acte += 1;
-        playerMovement.isDrinking = false;
         playerMovement.CanMove = true;
     }
+
+    
+    
 
     public string GetDescription() {
         return "Boire";

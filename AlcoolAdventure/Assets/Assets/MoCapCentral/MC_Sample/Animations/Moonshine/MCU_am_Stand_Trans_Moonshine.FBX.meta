@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 44f3cf9adc6abda49887a528b20f70ea
+AssetOrigin:
+  serializedVersion: 1
+  productId: 291284
+  packageName: MC Sample - Believable 3D Animations by MoCap Central
+  packageVersion: 1.1.0
+  assetPath: Assets/MoCapCentral/MC_Sample/Animations/Moonshine/MCU_am_Stand_Trans_Moonshine.FBX
+  uploadId: 680140
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -16,8 +23,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -1034,8 +1039,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 5958d20394757cd4092feaf67ab80b97,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 5958d20394757cd4092feaf67ab80b97, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
@@ -1047,10 +1051,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 291284
-  packageName: MC Sample - Believable 3D Animations by MoCap Central
-  packageVersion: 1.1.0
-  assetPath: Assets/MoCapCentral/MC_Sample/Animations/Moonshine/MCU_am_Stand_Trans_Moonshine.FBX
-  uploadId: 680140
