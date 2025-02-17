@@ -11,8 +11,13 @@ public class Jug : MonoBehaviour, IInteractable {
     private Animator drinkAnimator; 
     private CameraMovementCinematic cameraMovementCinematic;
 
-    public string nameTrigger;
-    private GameEventTrigger gameEventTrigger;
+    public string nameTrigger1;
+    public string eventToTrigger1;
+    public string eventToTrigger2;
+    public string eventToTrigger3;
+    public string eventToTrigger4;
+
+    private int nbDrunk = 0;
 
     [SerializeField] private GameObject handJug;
 
@@ -22,8 +27,7 @@ public class Jug : MonoBehaviour, IInteractable {
         drinkAnimator = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>();
         cameraMovementCinematic = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovementCinematic>();
         
-        EventSystemManager.Instance.SubscribeToEvent(nameTrigger, () => isEmpty = false);
-        gameEventTrigger = GetComponent<GameEventTrigger>();
+        EventSystemManager.Instance.SubscribeToEvent(nameTrigger1, () => isEmpty = false);
     }
 
     void Update() {
@@ -32,7 +36,8 @@ public class Jug : MonoBehaviour, IInteractable {
 
     public void Interact() {
         Drink();
-        gameEventTrigger.TriggerEvent();
+        EventSystemManager.Instance.TriggerEvent(ActHandler());
+        nbDrunk += 1;
     }
 
     private void Drink()
@@ -81,7 +86,22 @@ public class Jug : MonoBehaviour, IInteractable {
     }
 
     
-    
+    private string ActHandler()
+    {
+        switch(nbDrunk){
+            case 0:
+                return eventToTrigger1;
+            
+            case 1:
+                return eventToTrigger2;
+            
+            case 2:
+                return eventToTrigger3;
+            
+            default:
+                return eventToTrigger4;
+        }
+    }
 
     public string GetDescription() {
         return "Boire";

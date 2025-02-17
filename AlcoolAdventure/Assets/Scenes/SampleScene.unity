@@ -11338,7 +11338,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3336a3fe3c3216a448330a929b62284e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTrigger: 
+  nameTrigger1: 
+  eventToTrigger1: 
+  eventToTrigger2: 
+  eventToTrigger3: 
+  eventToTrigger4: 
   handJug: {fileID: 159396796}
 --- !u!1 &832575517
 GameObject:
@@ -27145,7 +27149,7 @@ MonoBehaviour:
     - {fileID: 0}
     endInteractionEvent: Peut boire
   triggers:
-  - eventName: Tasse bue
+  - eventName: Acte 1
     newDialogueIndex: 1
 --- !u!4 &1923823800 stripped
 Transform:
@@ -27757,7 +27761,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3336a3fe3c3216a448330a929b62284e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTrigger: Peut boire
+  nameTrigger1: Peut boire
+  eventToTrigger1: Acte 1
+  eventToTrigger2: Acte 2
+  eventToTrigger3: Acte 3
+  eventToTrigger4: Acte 4
   handJug: {fileID: 159396796}
 --- !u!114 &1944788760
 MonoBehaviour:
