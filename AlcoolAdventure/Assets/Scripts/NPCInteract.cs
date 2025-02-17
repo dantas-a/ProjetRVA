@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class NPCInteract : MonoBehaviour, IInteractable {
     
@@ -19,7 +20,7 @@ public class NPCInteract : MonoBehaviour, IInteractable {
 
     [SerializeField] private TMP_Text dialogueText;
 
-    private bool isTalking;
+    private bool isTyping;
 
     public void Awake()
     {
@@ -33,26 +34,41 @@ public class NPCInteract : MonoBehaviour, IInteractable {
         return NameNPC;
     }
     public void Interact(){
-        if (!npc.EndDialogue()) {
-            lookAtPlayer.lookat(player.position);
+        if (!isTyping){
+            if (!npc.EndDialogue()) {
+                lookAtPlayer.lookat(player.position);
 
-            //animator.SetTrigger("Talk");
+                //animator.SetTrigger("Talk");
 
-            showCanvaDialogue(npc.GetNameNPCTalking(),npc.GetDialogue());
-            npc.ShowNextDialogue();
-        } else {
-            hideCanvaDialogue();
+                showCanvaDialogue(npc.GetNameNPCTalking(),npc.GetDialogue());
+                npc.ShowNextDialogue();
+            } else {
+                hideCanvaDialogue();
+            }
         }
     }
 
+    IEnumerator Typing(string textNPC)
+    {
+        isTyping = true;
+        dialogueText.text = "";
+
+        foreach (char letter in textNPC.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(0.03f);
+        }
+
+        isTyping = false;
+    }
     private void showCanvaDialogue(string nameNPC, string textNPC){
         if (nameNPC != null && textNPC != null) {   
             //Time.timeScale = 0f;
             playerMovement.CanMove = false;
             dialogueCanvas.SetActive(true);
             speakerText.text = nameNPC;
-            dialogueText.text = textNPC;
             npc.PlayDialogueAudio();
+            StartCoroutine(Typing(textNPC));
         }
     }
 
