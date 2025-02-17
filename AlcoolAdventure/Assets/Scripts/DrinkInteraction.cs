@@ -45,7 +45,7 @@ public class Jug : MonoBehaviour, IInteractable {
         gameObject.GetComponent<Renderer>().enabled = false;// Fait disparaître la tasse de la table
         cameraMovementCinematic.StartMovement();    // Fait bouger la caméra
         
-        drinkAnimator.SetTrigger("drinkTrigger"); // Déclenche l'animation de boisson
+        drinkAnimator.SetBool("isDrinking", true); // Déclenche l'animation de boisson
 
         StartCoroutine(WaitForEndOfAnimation("ToIdle"));    // Démarre la coroutine pour attendre la fin de l'animation
     }
@@ -65,6 +65,7 @@ public class Jug : MonoBehaviour, IInteractable {
         }
 
         // Une fois l'animation terminée, exécute le reste du code
+        drinkAnimator.SetBool("isDrinking", false);
         cameraMovementCinematic.StartMovement();
         gameObject.GetComponent<Renderer>().enabled = true;
         handJug.SetActive(!handJug.activeSelf);
