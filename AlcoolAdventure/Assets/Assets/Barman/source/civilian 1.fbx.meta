@@ -7,8 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Beard
+    second: {fileID: 2100000, guid: d2b2766cb31380f4d84cb1cef36e9760, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: b44f8c5b134199a43868d047631242a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottom
+    second: {fileID: 2100000, guid: 8ec669b01ebd5814c95cac373f721b84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Hair
     second: {fileID: 2100000, guid: 9c2e049b014547c40a35057adf0f868c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Moustache
+    second: {fileID: 2100000, guid: cb31ab00142e99849915d60039ec674a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoes
+    second: {fileID: 2100000, guid: 27d8c8f2e849093408801f4e4de93f62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Top
+    second: {fileID: 2100000, guid: 27f3ee2c66c87e04195572249e1b94f0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
