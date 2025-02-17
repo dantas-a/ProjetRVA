@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BarrelInteraction : MonoBehaviour, IInteractable
+public class ObjectInteraction : MonoBehaviour, IInteractable
 {
     public bool canBeInteractedWith { get; set; } = false;
 

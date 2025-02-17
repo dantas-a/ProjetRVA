@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Jug : MonoBehaviour, IInteractable {
 
-    public bool canBeInteractedWith { get; set; } = true;
-    public bool isEmpty  = false;
+    public bool canBeInteractedWith { get; set; } = false;
+    private bool isEmpty = true;
 
     private FirstPersonController playerMovement;
     private Animator drinkAnimator; 
     private CameraMovementCinematic cameraMovementCinematic;
+
+    public string nameTrigger;
+    private GameEventTrigger gameEventTrigger;
 
     [SerializeField] private GameObject handJug;
 
@@ -18,14 +21,18 @@ public class Jug : MonoBehaviour, IInteractable {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
         drinkAnimator = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>();
         cameraMovementCinematic = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovementCinematic>();
+        
+        EventSystemManager.Instance.SubscribeToEvent(nameTrigger, () => isEmpty = false);
+        gameEventTrigger = GetComponent<GameEventTrigger>();
     }
 
     void Update() {
-        //canBeInteractedWith = !isEmpty;
+        canBeInteractedWith = !isEmpty;
     }
 
     public void Interact() {
         Drink();
+        gameEventTrigger.TriggerEvent();
     }
 
     private void Drink()
