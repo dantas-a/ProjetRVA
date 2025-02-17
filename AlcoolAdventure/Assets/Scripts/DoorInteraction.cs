@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class EntranceDoor : MonoBehaviour, IInteractable {
+public class Door : MonoBehaviour, IInteractable {
 
     public bool canBeInteractedWith { get; set; } = true;
     public float smooth = 10f; // Vitesse de rotation
     private float targetYRotation; // Rotation cible autour de l'axe Y
     private float defaultYRotation; // Rotation par défaut (position fermée)
     private bool isOpen; // État de la porte
+
+    public float rotationAmount;
 
     // Décalage du pivot local (coin en bas à gauche de la porte)
     public Vector3 pivotOffset = new Vector3(0f, 0f, 0f); // Ajustez selon la taille de la porte
@@ -28,7 +30,7 @@ public class EntranceDoor : MonoBehaviour, IInteractable {
 
         if (isOpen) {
             // Ouvre la porte de 90 degrés
-            targetYRotation = defaultYRotation - 90f;
+            targetYRotation = defaultYRotation - rotationAmount;
         } else {
             // Ferme la porte (retour à la rotation par défaut)
             targetYRotation = defaultYRotation;
