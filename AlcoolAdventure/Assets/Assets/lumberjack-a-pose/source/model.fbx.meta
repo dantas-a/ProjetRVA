@@ -105,7 +105,42 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: model(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharaHD_Eye_L
+      parentName: model(Clone)
+      position: {x: -0.037077293, y: 0.88795936, z: 0.0868614}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharaHD_Eye_R
+      parentName: model(Clone)
+      position: {x: 0.037074104, y: 0.8880441, z: 0.08673765}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharaHD_Kilt
+      parentName: model(Clone)
+      position: {x: -0.0051189614, y: 0.11303997, z: -0.039957132}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharaHD_Cheveux
+      parentName: model(Clone)
+      position: {x: -0, y: 0.803587, z: -0.0673684}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharaHD_buchesbasket
+      parentName: model(Clone)
+      position: {x: 0.00007514, y: 0.44146237, z: -0.37304786}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharaHD_Body1
+      parentName: model(Clone)
+      position: {x: 0.0000003814697, y: -0.022330666, z: 0.014059839}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -120,9 +155,9 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

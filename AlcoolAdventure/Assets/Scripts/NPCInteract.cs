@@ -11,7 +11,7 @@ public class NPCInteract : MonoBehaviour, IInteractable {
     private LookAtPlayer lookAtPlayer;
     [SerializeField] private NPC npc;
 
-    //private Animator animator;
+    private Animator animator;
     private FirstPersonController playerMovement;
     
     [SerializeField] private GameObject dialogueCanvas;
@@ -22,9 +22,11 @@ public class NPCInteract : MonoBehaviour, IInteractable {
 
     private bool isTyping;
 
+    private bool isTalking = false;
+
     public void Awake()
     {
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         lookAtPlayer = GetComponent<LookAtPlayer>();
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
     }
@@ -38,7 +40,7 @@ public class NPCInteract : MonoBehaviour, IInteractable {
             if (!npc.EndDialogue()) {
                 lookAtPlayer.lookat(player.position);
 
-                //animator.SetTrigger("Talk");
+                
 
                 showCanvaDialogue(npc.GetNameNPCTalking(),npc.GetDialogue());
                 npc.ShowNextDialogue();
@@ -64,6 +66,8 @@ public class NPCInteract : MonoBehaviour, IInteractable {
     private void showCanvaDialogue(string nameNPC, string textNPC){
         if (nameNPC != null && textNPC != null) {   
             //Time.timeScale = 0f;
+            isTalking = !isTalking;
+            animator.SetBool("isTalking", isTalking);
             playerMovement.CanMove = false;
             dialogueCanvas.SetActive(true);
             speakerText.text = nameNPC;
@@ -74,6 +78,8 @@ public class NPCInteract : MonoBehaviour, IInteractable {
 
     private void hideCanvaDialogue(){
         //Time.timeScale = 1f;
+        isTalking = !isTalking;
+        animator.SetBool("isTalking", isTalking);
         playerMovement.CanMove = true;
         dialogueCanvas.SetActive(false);
     }
