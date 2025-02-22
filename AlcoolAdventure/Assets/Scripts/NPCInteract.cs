@@ -24,6 +24,8 @@ public class NPCInteract : MonoBehaviour, IInteractable {
 
     private bool isTalking = false;
 
+    // private bool hunterFirstTalk = true;
+
     public void Awake()
     {
         animator = GetComponent<Animator>();
@@ -46,6 +48,9 @@ public class NPCInteract : MonoBehaviour, IInteractable {
                 npc.ShowNextDialogue();
             } else {
                 hideCanvaDialogue();
+                // if (gameObject.CompareTag("Hunter") && hunterFirstTalk) {
+                //     StartCoroutine(moveHunter());
+                // }
             }
         }
     }
@@ -83,4 +88,44 @@ public class NPCInteract : MonoBehaviour, IInteractable {
         playerMovement.CanMove = true;
         dialogueCanvas.SetActive(false);
     }
+
+    // private IEnumerator moveHunter(){
+    //     // Pour faire se déplacer le pilleur de tombes la première fois qu'on lui parle
+    //     Debug.Log(hunterFirstTalk);
+    //     hunterFirstTalk = false;
+    //     Vector3 targetPos = new Vector3(479.3787f, 4.16956f, 459.426f);
+    //     Quaternion targetRot = new Quaternion();
+    //     float rotationSpeed = 5.0f;
+    //     float moveDuration = 5.0f;
+
+
+    //     Vector3 startPos = transform.position;
+    //     Quaternion startRot = transform.rotation;
+    //     float elapsedTime = 0f;
+
+    //     targetRot = Quaternion.LookRotation(targetPos - startPos);
+
+    //     while (elapsedTime < moveDuration)
+    //     {
+    //         elapsedTime += Time.deltaTime;
+    //         float t = elapsedTime / moveDuration;
+
+    //         // Interpolation de la position
+    //         //transform.position = Vector3.Lerp(startPos, targetPos, t);
+    //         transform.position = targetPos;
+
+    //         // Interpolation de la rotation
+    //         transform.rotation = Quaternion.Lerp(startRot, targetRot, t * rotationSpeed);
+
+    //         Debug.Log(elapsedTime);
+    //         yield return null;
+    //     }
+
+    //     // S'assurer que l'objet atteint exactement la cible
+    //     transform.position = targetPos;
+    //     transform.rotation = targetRot;
+
+        
+
+    // }
 }
