@@ -79,12 +79,12 @@ public class NPC : MonoBehaviour
 
     public bool EndDialogue()
     {   
-        Debug.Log(interactions[interactionIndex].dialogueLines.Count);
-        Debug.Log(dialogueIndex);
+        //Debug.Log(interactions[interactionIndex].dialogueLines.Count);
+        //Debug.Log(dialogueIndex);
         
         if (dialogueIndex == interactions[interactionIndex].dialogueLines.Count){
             string eventToTrigger = interactions[interactionIndex].endInteractionEvent;
-            Debug.Log("fin dialogue");
+            //Debug.Log("fin dialogue");
 
             if (!string.IsNullOrEmpty(eventToTrigger))
             {

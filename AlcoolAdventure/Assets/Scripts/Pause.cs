@@ -32,7 +32,7 @@ public class Pause : MonoBehaviour
     private void PauseGame()
     {
         isPaused = true;
-        playerMovement.CanMove = false;
+        playerMovement.Paused = true;
         PauseCanvas.SetActive(true);
 
         // Libérer la souris
@@ -43,7 +43,7 @@ public class Pause : MonoBehaviour
     public void ResumeGame()
     {
         isPaused = false;
-        playerMovement.CanMove = true;
+        playerMovement.Paused = false;
         PauseCanvas.SetActive(false);
 
         // Verrouiller la souris pour le mode FPS

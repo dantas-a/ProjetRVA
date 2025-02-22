@@ -12,12 +12,17 @@ public class FootstepSystem : MonoBehaviour {
     float Sin;
     
     bool isTriggered = false;
+    private FirstPersonController playerMovement;
 
+    void Start()
+    {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
+    }
     // Update is called once per frame
     void Update() {
         float inputMagnitude = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical")).magnitude;
         
-        if (inputMagnitude > 0) {
+        if (inputMagnitude > 0 & playerMovement.CanMove & !playerMovement.Paused & !playerMovement.Transition) {
         	StartFootsteps();
         } 
     }

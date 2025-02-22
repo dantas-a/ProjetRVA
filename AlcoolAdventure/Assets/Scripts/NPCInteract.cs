@@ -72,7 +72,7 @@ public class NPCInteract : MonoBehaviour, IInteractable {
         if (nameNPC != null && textNPC != null) {   
             //Time.timeScale = 0f;
             isTalking = !isTalking;
-            animator.SetBool("isTalking", isTalking);
+            if(animator != null) animator.SetBool("isTalking", isTalking);
             playerMovement.CanMove = false;
             dialogueCanvas.SetActive(true);
             speakerText.text = nameNPC;
@@ -84,7 +84,7 @@ public class NPCInteract : MonoBehaviour, IInteractable {
     private void hideCanvaDialogue(){
         //Time.timeScale = 1f;
         isTalking = !isTalking;
-        animator.SetBool("isTalking", isTalking);
+        if(animator != null) animator.SetBool("isTalking", isTalking);
         playerMovement.CanMove = true;
         dialogueCanvas.SetActive(false);
     }

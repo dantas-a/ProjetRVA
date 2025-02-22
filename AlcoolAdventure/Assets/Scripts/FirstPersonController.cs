@@ -3,6 +3,8 @@ using UnityEngine;
 public class FirstPersonController : MonoBehaviour
 {
 	public bool CanMove /*{ get; private set; }*/ = true;
+	public bool Paused = false;
+	public bool Transition = false;
 	
 	[Header("Movement Parameters")]
 	[SerializeField] private float walkSpeed = 3.0f;
@@ -36,7 +38,7 @@ public class FirstPersonController : MonoBehaviour
 	
 	void Update()
 	{
-		if (CanMove) {
+		if (CanMove & !Paused & !Transition) {
 			HandleMovementInput();
 			HandleMouseLook();
 			HandleMovementAnimation();

@@ -5,61 +5,77 @@ using UnityEngine;
 
 public class TransitionLore : MonoBehaviour
 {
+
+    [System.Serializable] public class Trigger
+    {
+        public string eventName; // Nom de l’événement
+        public string eventText; // Nouvel index du dialogue
+        public AudioClip audio;
+    }
+
+    public List<Trigger> triggers; // Liste des événements qui affectent ce PNJ
     [Header("Canvas & UI Elements")]
-    public CanvasGroup narrativeCanvasGroup;
+    public GameObject transitionCanvas;
     public TextMeshProUGUI narrativeText;
 
     [Header("Transition Settings")]
-    public float fadeDuration = 1.0f;
     public float typewriterSpeed = 0.06f; // Vitesse d'écriture
 
     private bool isNarrativeActive = false;
     private bool isTyping = false; // Indique si le texte est en train d'être écrit
     private bool canExit = false;  // Permet de quitter seulement à la fin du texte
 
+    private FirstPersonController playerMovement;
+    private AudioSource audioSource;
     private void Start()
     {
-        // Cacher le Canvas au départ
-        narrativeCanvasGroup.alpha = 0;
-        narrativeCanvasGroup.gameObject.SetActive(false);
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
+        audioSource = GetComponent<AudioSource>();
+        transitionCanvas.SetActive(false);
+        foreach (var trigger in triggers)
+        {
+            EventSystemManager.Instance.SubscribeToEvent(trigger.eventName, () => ShowNarrative(trigger.eventText, trigger.audio));
+        }
     }
 
     private void Update()
     {
         if (isNarrativeActive && canExit && Input.GetKeyDown(KeyCode.E))
         {
-            StartCoroutine(CloseNarrative());
+            transitionCanvas.SetActive(false);
+            isNarrativeActive = false;
         }
     }
 
     // Méthode publique pour afficher la narration
-    public void ShowNarrative(string text)
+    public void ShowNarrative(string text, AudioClip audio)
     {
-        StartCoroutine(NarrativeRoutine(text));
+        isNarrativeActive = true;
+        StartCoroutine(NarrativeRoutine(text,audio));
     }
 
-    private IEnumerator NarrativeRoutine(string text)
+    private IEnumerator NarrativeRoutine(string text, AudioClip audio)
     {
         // Active le Canvas
-        narrativeCanvasGroup.gameObject.SetActive(true);
-
-        // 🟡 Transition Entrée (Fade In)
-        yield return StartCoroutine(FadeCanvas(narrativeCanvasGroup, 0, 1, fadeDuration));
-
+        transitionCanvas.SetActive(true);
+        playerMovement.Transition = true;
+        
+        audioSource.PlayOneShot(audio);
         // 🖋️ Écriture progressive du texte
         yield return StartCoroutine(TypewriterEffect(text));
 
         // Active la possibilité de quitter (après la fin du texte)
         canExit = true;
 
+
         // Attente de la touche E pour quitter
         while (!Input.GetKeyDown(KeyCode.E))
         {
             yield return null;
         }
-
-        // 🔴 Transition Sortie (Fade Out)
-        yield return StartCoroutine(CloseNarrative());
+        transitionCanvas.SetActive(false);
+        isNarrativeActive = false;
+        playerMovement.Transition = false;
     }
 
     // Méthode pour écrire le texte lettre par lettre
@@ -75,27 +91,5 @@ public class TransitionLore : MonoBehaviour
         }
 
         isTyping = false;
-    }
-
-    // Méthode pour fermer la narration
-    private IEnumerator CloseNarrative()
-    {
-        canExit = false;
-        yield return StartCoroutine(FadeCanvas(narrativeCanvasGroup, 1, 0, fadeDuration));
-        narrativeCanvasGroup.gameObject.SetActive(false);
-        isNarrativeActive = false;
-    }
-
-    // Transition (Fade)
-    private IEnumerator FadeCanvas(CanvasGroup canvasGroup, float startAlpha, float endAlpha, float duration)
-    {
-        float time = 0;
-        while (time < duration)
-        {
-            time += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, time / duration);
-            yield return null;
-        }
-        canvasGroup.alpha = endAlpha;
     }
 }
