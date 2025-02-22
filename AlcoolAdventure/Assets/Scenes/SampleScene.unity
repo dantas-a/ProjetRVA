@@ -2793,7 +2793,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b86921965569b40a984ab00075f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions: []
+  interactions:
+  - speakerNames:
+    - "D\xE9mone"
+    - "D\xE9mone"
+    dialogueLines:
+    - "Qui est l\u2019humain qui m\u2019a invoqu\xE9 ? Toi ? Eww, c\u2019est pas
+      possible\u202F! \xC7a pouvait pas \xEAtre un beau gosse ? Parce que t\u2019es
+      vraiment paaaas \u2026 ouais. Non \u2026"
+    - "Je ne veux m\xEAme pas ton \xE2me. Je pr\xE9f\xE8re retourner en enfer. EEww,
+      j\u2019en reviens pas. "
+    dialogueVoices:
+    - {fileID: 0}
+    - {fileID: 0}
+    endInteractionEvent: 
   triggers: []
 --- !u!143 &149532831
 CharacterController:
@@ -3729,11 +3742,58 @@ MonoBehaviour:
   - speakerNames:
     - Pilleur de tombes
     dialogueLines:
-    - jem'envolebizou
+    - "Rejoins-moi au cimeti\xE8re plus tard."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Pilleur 0
+  - speakerNames:
+    - Pilleur de tombes
+    dialogueLines:
+    - "T\u2019as du cran gamin, j\u2019ai une mission pour toi. Tu vois le cimeti\xE8re
+      derri\xE8re moi, il y a un art\xE9fact cach\xE9 dans une des tombes qui, parait-il,
+      vaudrait un sacr\xE9 pactole. Apporte-le-moi et je veillerai \xE0 ce que tu
+      sois r\xE9compens\xE9."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Pilleur 1
+  - speakerNames:
+    - Pilleur de tombes
+    dialogueLines:
+    - "Ne perds pas de temps, il faut que tu me rapportes l\u2019art\xE9fact avant
+      le point du jour si on ne veut pas se faire voir. Il faut que je termine ce
+      fichu rituel."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Pilleur 2
+  - speakerNames:
+    - Pilleur de tombes
+    dialogueLines:
+    - "Eh bien, je ne pensais pas que tu y arriverais. Merci pour l\u2019art\xE9fact,
+      et pour ta r\xE9compense\u2026 Je te laisse la vie sauve, estime-toi heureux."
     dialogueVoices:
     - {fileID: 0}
     endInteractionEvent: 
-  triggers: []
+  - speakerNames:
+    - Toi
+    - Pilleur de tombes
+    dialogueLines:
+    - "Je n\u2019ai rien trouv\xE9 qui ait un tant soit peu de valeur dans le cimeti\xE8re.
+      Tu as d\xFB faire erreur sur le lieu."
+    - "Je me doutais que tu n\u2019en \xE9tais pas capable."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: 
+  triggers:
+  - eventName: Dialogue Pilleur 0
+    newDialogueIndex: 1
+  - eventName: Dialogue Pilleur 1
+    newDialogueIndex: 2
+  - eventName: Dialogue Pilleur 2
+    newDialogueIndex: 2
+  - eventName: Prendre le collier
+    newDialogueIndex: 3
+  - eventName: Rituel fait
+    newDialogueIndex: 4
 --- !u!114 &186668381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12804,39 +12864,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - speakerNames:
-    - Garde
+    - Garde 1
+    - Garde 2
+    - Garde 1
     dialogueLines:
-    - Apporte moi tonneau
+    - "J'esp\xE8re que ce soir \xE7a va pas \xEAtre le raffut, je veux faire ma sieste
+      tranquille."
+    - "Tu y crois vraiment ? C\u2019est la f\xEAte au Bouc Affam\xE9 des Faubourgs
+      . On va avoir du pain sur la planche avec tous ces gueux."
+    - "Fichtre, m\u2019en parle pas !! Et puis le dernier garde n\u2019est toujours
+      pas arriv\xE9, on devait \xEAtre trois."
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Peut prendre tonneau
+    - {fileID: 0}
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Gardes
+  - speakerNames:
+    - Garde 1
+    dialogueLines:
+    - "Allez mon brave, le Bouc Affam\xE9 des Faubourgs est droit devant."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Garde1 1
+  - speakerNames:
+    - 'Garde 1 '
+    dialogueLines:
+    - "Passez une bonne soir\xE9e mon brave ! "
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: 'Dialogue Garde1 2 '
   - speakerNames:
     - Garde
-    dialogueLines:
-    - Merci pour tonneau, apporte moi collier
-    dialogueVoices:
-    - {fileID: 0}
-    endInteractionEvent: Peut prendre collier
-  - speakerNames:
+    - Garde
     - Garde
     dialogueLines:
-    - Merci pour collier, apporte moi champignon
+    - "\xC7a commence \xE0 \xEAtre le chaos au Bouc Affam\xE9\u2026 On devrait peut-\xEAtre
+      y envoyer du renfort ?"
+    - ...
+    - "Ah non, laisse tomber, j\u2019ai pas envie d\u2019y mettre les pieds."
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Peut prendre champignon
-  - speakerNames:
-    - Garde
-    dialogueLines:
-    - Merci pour champignon
-    dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: 
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Garde1 3
   triggers:
-  - eventName: Tonneau pris
+  - eventName: Dialogue Gardes
     newDialogueIndex: 1
-  - eventName: Collier pris
+  - eventName: Dialogue Garde1 1
+    newDialogueIndex: 1
+  - eventName: 'Dialogue Garde1 2 '
     newDialogueIndex: 2
-  - eventName: Champignon pris
+  - eventName: Dialogue Garde1 3
+    newDialogueIndex: 3
+  - eventName: Acte 2
+    newDialogueIndex: 2
+  - eventName: Acte 3
     newDialogueIndex: 3
 --- !u!114 &881929365
 MonoBehaviour:
@@ -18822,8 +18904,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b86921965569b40a984ab00075f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions: []
-  triggers: []
+  interactions:
+  - speakerNames:
+    - Barde
+    dialogueLines:
+    - "Laissez-moi me concentrer, je mets l\u2019ambiance dans la taverne."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: 
+  - speakerNames:
+    - Barde
+    dialogueLines:
+    - "Et tu chantes, chantes, chantes ce refrain qui te pla\xEEt Et tu tapes, tapes,
+      tapes c'est ta fa\xE7on d'aimer Ce rythme qui t'entra\xEEne jusqu'au bout de
+      la nuit R\xE9veille en toi le tourbillon d'un vent de folie "
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: 
+  triggers:
+  - eventName: Acte 4
+    newDialogueIndex: 1
 --- !u!143 &1260313387
 CharacterController:
   m_ObjectHideFlags: 0
@@ -19919,7 +20019,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b86921965569b40a984ab00075f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions: []
+  interactions:
+  - speakerNames:
+    - Bouffon
+    dialogueLines:
+    - J'ai pas de blagues pour le moment
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: 
   triggers: []
 --- !u!143 &1316206889
 CharacterController:
@@ -20102,7 +20209,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b86921965569b40a984ab00075f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions: []
+  interactions:
+  - speakerNames:
+    - Maitre Yoda
+    dialogueLines:
+    - Connais tu Larry, le Malicieux ?
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: 
   triggers: []
 --- !u!1 &1328590519
 GameObject:
@@ -22075,33 +22189,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - speakerNames:
-    - Boubakar
-    - Jean-Eude
-    - Boubakar
+    - Pegu
     dialogueLines:
-    - Yo ahahha im gay
-    - Yo ahahha im gayer
-    - u fucking gay
+    - "Va voir ailleurs si j\u2019y suis."
     dialogueVoices:
-    - {fileID: 8300000, guid: e5951ba09eaced06aafc244802990f1d, type: 3}
-    - {fileID: 8300000, guid: 28841ef3359590e0e97647dd33e451bb, type: 3}
-    - {fileID: 8300000, guid: 28841ef3359590e0e97647dd33e451bb, type: 3}
-    endInteractionEvent: fin diag
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Pegu 0
   - speakerNames:
-    - boubakar
-    - boubakar
+    - Pegu
     dialogueLines:
-    - deuxieme discusion
-    - deuxieme parlage dans la deuxieme interaction
+    - "T\u2019as l'air d'un f\xEAtard, je t'ai vu descendre ta chope. J'ai un plan
+      \xE0 te proposer, le fermier fait pousser des champignons qui te font d\xE9coller
+      mon fr\xE8re. Il faut juste s\u2019arranger pour qu\u2019il s\u2019en aille.
+      T'as qu'\xE0 lui vomir dessus ahaha, nan j\u2019d\xE9conne aller mon fr\xE8re,
+      tu trouveras bien un moyen. "
     dialogueVoices:
-    - {fileID: 8300000, guid: 2aa71221218f97415ab86c6fceca80e8, type: 3}
-    - {fileID: 8300000, guid: 1a16280ee7de2ad02bcbe02ad8caf363, type: 3}
-    endInteractionEvent: retour int1
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Pegu 1
+  - speakerNames:
+    - Pegu
+    dialogueLines:
+    - 'Alors ces champignons ? '
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Pegu 2
+  - speakerNames:
+    - Pegu
+    - Pegu
+    dialogueLines:
+    - "Oh mon fr\xE8re, t\u2019as trouv\xE9 les Clochettes-du-Delirium. Aller on
+      partage et chacun sa dose. On va d\xE9coller man. "
+    - "WWWoooouuuaaaaaa. C\u2019est un truc de malade"
+    dialogueVoices:
+    - {fileID: 0}
+    - {fileID: 0}
+    endInteractionEvent: "Champignons consomm\xE9s"
+  - speakerNames:
+    - Pegu
+    dialogueLines:
+    - EHEHHEHEHE! Ca bouze tans doux les zens.
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Pegu 4
   triggers:
-  - eventName: retour int1
+  - eventName: Dialogue Pegu 0
     newDialogueIndex: 0
-  - eventName: fin diag
-    newDialogueIndex: 1
+  - eventName: Dialogue Pegu 1
+    newDialogueIndex: 2
+  - eventName: Dialogue Pegu 2
+    newDialogueIndex: 2
+  - eventName: Cueillir le champignon
+    newDialogueIndex: 3
+  - eventName: "Champignons consomm\xE9s"
+    newDialogueIndex: 4
 --- !u!82 &1456750245
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25061,39 +25201,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - speakerNames:
-    - Garde
+    - Garde 1
+    - Garde 2
+    - Garde 1
     dialogueLines:
-    - Apporte moi tonneau
+    - "J'esp\xE8re que ce soir \xE7a va pas \xEAtre le raffut, je veux faire ma sieste
+      tranquille."
+    - "Tu y crois vraiment ? C\u2019est la f\xEAte au Bouc Affam\xE9 des Faubourgs
+      . On va avoir du pain sur la planche avec tous ces gueux."
+    - "Fichtre, m\u2019en parle pas !! Et puis le dernier garde n\u2019est toujours
+      pas arriv\xE9, on devait \xEAtre trois."
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Peut prendre tonneau
+    - {fileID: 0}
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Gardes
   - speakerNames:
-    - Garde
+    - Garde 2
     dialogueLines:
-    - Merci pour tonneau, apporte moi collier
+    - Allez-y mollo sur le rhum.
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Peut prendre collier
+    endInteractionEvent: Dialogue Garde2 1
   - speakerNames:
-    - Garde
+    - Garde 2
     dialogueLines:
-    - Merci pour collier, apporte moi champignon
+    - "Attention \xE0 ne pas vous perdre, les bois sont sombres \xE0 cette heure
+      ci. "
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Peut prendre champignon
+    endInteractionEvent: Dialogue Garde2 2
   - speakerNames:
-    - Garde
+    - Garde 2
     dialogueLines:
-    - Merci pour champignon
+    - esafsaefasef
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: 
+    endInteractionEvent: Dialogue Garde2 3
   triggers:
-  - eventName: Tonneau pris
+  - eventName: Dialogue Gardes
     newDialogueIndex: 1
-  - eventName: Collier pris
+  - eventName: Dialogue Garde2 1
+    newDialogueIndex: 1
+  - eventName: Dialogue Garde2 2
     newDialogueIndex: 2
-  - eventName: Champignon pris
+  - eventName: Dialogue Garde2 3
+    newDialogueIndex: 3
+  - eventName: Acte 2
+    newDialogueIndex: 2
+  - eventName: Acte 3
     newDialogueIndex: 3
 --- !u!114 &1704697941
 MonoBehaviour:
@@ -25274,8 +25430,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b86921965569b40a984ab00075f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions: []
-  triggers: []
+  interactions:
+  - speakerNames:
+    - ...
+    - ...
+    dialogueLines:
+    - Je vole !
+    - Jack, je vole !!!
+    dialogueVoices:
+    - {fileID: 0}
+    - {fileID: 0}
+    endInteractionEvent: T pose
+  triggers:
+  - eventName: T pose
+    newDialogueIndex: 0
+  - eventName: Acte 3
+    newDialogueIndex: 0
 --- !u!143 &1706561167
 CharacterController:
   m_ObjectHideFlags: 0
@@ -27194,7 +27364,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b86921965569b40a984ab00075f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions: []
+  interactions:
+  - speakerNames:
+    - Tavernier
+    dialogueLines:
+    - "Oye compagnon, t\u2019es nouveau ici toi non ? J\u2019vais te donner une chope."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Tavernier 0
+  - speakerNames:
+    - Toi
+    - Tavernier
+    dialogueLines:
+    - "Et beh patron, il y a trou dans mon verre ou quoi ? Il est vachement vide
+      le godet l\xE0 !"
+    - "HAHAHAHAHAHA, eh non mon cochon, c\u2019est juste que mon f\xFBt de bi\xE8re
+      aux trois herbes est vide. Mais si tu vas m\u2019en chercher un autre, toutes
+      les bi\xE8res sont offertes pour toi\u202F! Les tonneaux sont stock\xE9s \xE0
+      l\u2019\xE9tage, ram\xE8ne-m'en donc un."
+    dialogueVoices:
+    - {fileID: 0}
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Tavernier 1
+  - speakerNames:
+    - Tavernier
+    dialogueLines:
+    - "Oh toi ! On va devenir de bons amis. Ce soir, c\u2019est gratuit pour mon
+      seigneur."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Tavernier 2
+  - speakerNames:
+    - Tavernier
+    dialogueLines:
+    - Et une chope remplie pour mon coupaing.
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Tavernier 2
   triggers: []
 --- !u!143 &1814695425
 CharacterController:
@@ -27793,8 +27999,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b86921965569b40a984ab00075f318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions: []
-  triggers: []
+  interactions:
+  - speakerNames:
+    - Fermier
+    dialogueLines:
+    - "La taverne, c\u2019est l\u2019autre b\xE2timent. Ici, c\u2019est mon champs,
+      du balai."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Fermier 0
+  - speakerNames:
+    - Fermier
+    dialogueLines:
+    - Du vent !!
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Fermier 1
+  - speakerNames:
+    - Fermier
+    dialogueLines:
+    - Ouste !!
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Fermier 2
+  - speakerNames:
+    - Fermier
+    dialogueLines:
+    - Vous ne passerez paaaaaas.
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Fermier 3
+  - speakerNames:
+    - Fermier
+    dialogueLines:
+    - "Ah bah, c'est bien \xE7a, super pour ma tunique, g\xE9niale, j\u2019te remercie,
+      elle est foutue, c'est pas grave, ah euh hein t'es vraiment un sale petit con."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Fermier 4
+  - speakerNames:
+    - Fermier
+    - Toi
+    - Pegu
+    - Fermier
+    dialogueLines:
+    - "OoooOOOOoooh toi la !!!! T\u2019as d\xE9j\xE0 ruin\xE9 ma tunique et on m'a
+      vol\xE9 mes champignons !!! C\u2019est toi j'en suis s\xFBr !! On va se battre
+      !!"
+    - "Quoi ?! non, c'est pas moi, c\u2019est le pegu le voleur, regardes, il est
+      totalement arrach\xE9\u202F!"
+    - "HEeeiin.. Quoi.. kesako ?! Les champis\u2026 Sont zuper bons EHHEHe !!!"
+    - OOh tu vas mal repartir mon copain !
+    dialogueVoices:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Fermier 5
+  - speakerNames:
+    - Fermier
+    dialogueLines:
+    - Fallait pas me voler, saligaud.
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Fermier 6
+  triggers:
+  - eventName: Dialogue Fermier 0
+    newDialogueIndex: 1
+  - eventName: Dialogue Fermier 1
+    newDialogueIndex: 2
+  - eventName: Dialogue Fermier 2
+    newDialogueIndex: 3
+  - eventName: Dialogue Fermier 3
+    newDialogueIndex: 1
+  - eventName: Vomit
+    newDialogueIndex: 4
+  - eventName: Dialogue Fermier 4
+    newDialogueIndex: 5
+  - eventName: Dialogue Fermier 5
+    newDialogueIndex: 6
+  - eventName: Dialogue Fermier 6
+    newDialogueIndex: 6
 --- !u!143 &1899683479
 CharacterController:
   m_ObjectHideFlags: 0
@@ -28207,20 +28492,89 @@ MonoBehaviour:
   - speakerNames:
     - Servante
     dialogueLines:
-    - Tu peux boire
+    - "Bonsoir, entrez donc ! Laissez-vous tenter : c\u2019est la grande braderie
+      sur notre fameuse bi\xE8re aux trois herbes. Go\xFBtez \xE0 la recette secr\xE8te,
+      digne des festins royaux ! Rendez-vous aupr\xE8s du tavernier derri\xE8re le
+      comptoir. "
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Peut boire
+    endInteractionEvent: Dialogue Servante 0
   - speakerNames:
     - Servante
     dialogueLines:
-    - Je t'ai resservi
+    - "Vous \xEAtes en veine ce soir, mes amis ! La c\xE9l\xE9brit\xE9 du comt\xE9,
+      le fameux Trouba La D, est parmi nous. Venez l\u2019\xE9couter conter ses meilleures
+      blagues !"
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Peut boire
+    endInteractionEvent: Dialogue Servante 1
+  - speakerNames:
+    - Servante
+    dialogueLines:
+    - "Rendez-vous aupr\xE8s du tavernier derri\xE8re le comptoir."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Servante 2
+  - speakerNames:
+    - Servante
+    dialogueLines:
+    - "Rendez-vous aupr\xE8s du tavernier derri\xE8re le comptoir."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Servante 3
+  - speakerNames:
+    - Servante
+    dialogueLines:
+    - "T\u2019es lourd l\xE0, va voir le tavernier. TSS"
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Servante 4
+  - speakerNames:
+    - Servante
+    dialogueLines:
+    - "Bon, vous \xEAtes pire qu\u2019un ivrogne en qu\xEAte d\u2019une bi\xE8re
+      gratuite ! Y\u2019a rien de nouveau \xE0 dire, allez donc voir ailleurs."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Servante 5
+  - speakerNames:
+    - Servante
+    dialogueLines:
+    - "Vous avez pas un cimeti\xE8re \xE0 piller ou un d\xE9mon \xE0 invoquer ? Non
+      ? Bon alors laissez-moi bosser."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Servante 6
+  - speakerNames:
+    - Servante
+    dialogueLines:
+    - "Le Bouc Affam\xE9, c\u2019est pas juste une taverne, c\u2019est un mode de
+      vie ! Mais c\u2019est surtout un endroit o\xF9 je vais devoir encore nettoyer
+      du vomi demain matin\u2026 Pfff."
+    dialogueVoices:
+    - {fileID: 0}
+    endInteractionEvent: Dialogue Servante 6
   triggers:
-  - eventName: Acte 1
+  - eventName: Dialogue Servante 0
     newDialogueIndex: 1
+  - eventName: Dialogue Servante 1
+    newDialogueIndex: 2
+  - eventName: Dialogue Servante 2
+    newDialogueIndex: 3
+  - eventName: Dialogue Servante 3
+    newDialogueIndex: 4
+  - eventName: Dialogue Servante 4
+    newDialogueIndex: 4
+  - eventName: Acte 2
+    newDialogueIndex: 5
+  - eventName: Dialogue Servante 5
+    newDialogueIndex: 5
+  - eventName: Acte 3
+    newDialogueIndex: 6
+  - eventName: Dialogue Servante 6
+    newDialogueIndex: 7
+  - eventName: Dialogue Servante 5
+    newDialogueIndex: 7
 --- !u!4 &1923823800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 43a44506d9e024dcbb8ae4c545352651, type: 3}
