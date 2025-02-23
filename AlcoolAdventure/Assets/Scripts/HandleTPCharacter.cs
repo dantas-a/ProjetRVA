@@ -14,7 +14,6 @@ public class HandleTPCharacter : MonoBehaviour
     
     void Start()
     {   
-        hunter.transform.position = new Vector3(559.2015f, 8.25856f, 417.0407f);
         // Tasse
         jug.SetActive(false);
         EventSystemManager.Instance.SubscribeToEvent("Dialogue Tavernier 0", () => jug.SetActive(true));
@@ -24,7 +23,7 @@ public class HandleTPCharacter : MonoBehaviour
         EventSystemManager.Instance.SubscribeToEvent("Acte 3", () => tPose.SetActive(true));
 
         // Pilleur de tombes
-        //hunter.SetActive(false);
+        hunter.SetActive(false);
         EventSystemManager.Instance.SubscribeToEvent("Acte 1", () => hunter.SetActive(true));
         EventSystemManager.Instance.SubscribeToEvent("Dialogue Pilleur 0", () => hunter.SetActive(false));
         EventSystemManager.Instance.SubscribeToEvent("Acte 2", () => {
