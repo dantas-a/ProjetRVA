@@ -7,11 +7,12 @@ TagManager:
   - Ladder
   - BagarreFermier
   - BagarrePegu
+  - Puke
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - IgnoreParticleCollision
   - Water
   - UI
   - 
