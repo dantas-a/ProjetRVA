@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -9,34 +10,37 @@ public class DrunkEffect : MonoBehaviour
     private MotionBlur motionBlur;
     private Vignette vignette;
 
-    public float distortionIntensity = 0.3f;
-    public float wobbleSpeed = 2.0f;
-    public float wobbleAmount = 0.1f;
-    public float flou = 0.5f;
-    public float ombre = 0.4f;
+    public List<float> distortionIntensity;
+    public List<float> wobbleSpeed;
+    public List<float> wobbleAmount;
+    public List<float> flou ;
+    public List<float> ombre;
+    public int lvl = 0;
 
     void Start()
     {
         postProcessVolume.profile.TryGet(out lensDistortion);
         postProcessVolume.profile.TryGet(out motionBlur);
         postProcessVolume.profile.TryGet(out vignette);
+        EventSystemManager.Instance.SubscribeToEvent("Acte 2", () => lvl++);
+        EventSystemManager.Instance.SubscribeToEvent("Acte 3", () => lvl++);
     }
 
     void Update()
     {
         if (lensDistortion != null)
         {
-            lensDistortion.intensity.value = Mathf.Sin(Time.time * wobbleSpeed) * wobbleAmount + distortionIntensity;
+            lensDistortion.intensity.value = Mathf.Sin(Time.time * wobbleSpeed[lvl]) * wobbleAmount[lvl] + distortionIntensity[lvl];
         }
 
         if (motionBlur != null)
         {
-            motionBlur.intensity.value = flou; // Flou constant
+            motionBlur.intensity.value = flou[lvl]; // Flou constant
         }
 
         if (vignette != null)
         {
-            vignette.intensity.value = ombre; // Ombre autour des bords
+            vignette.intensity.value = ombre[lvl]; // Ombre autour des bords
         }
     }
 }

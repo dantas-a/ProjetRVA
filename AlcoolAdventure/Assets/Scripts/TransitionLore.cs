@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TransitionLore : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class TransitionLore : MonoBehaviour
         {
             EventSystemManager.Instance.SubscribeToEvent(trigger.eventName, () => ShowNarrative(trigger.eventText, trigger.audio));
         }
+        EventSystemManager.Instance.SubscribeToEvent("Fin", () => SceneManager.LoadSceneAsync(0));
     }
 
     private void Update()

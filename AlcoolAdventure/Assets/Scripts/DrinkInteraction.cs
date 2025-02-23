@@ -15,7 +15,6 @@ public class Jug : MonoBehaviour, IInteractable {
     public string eventToTrigger1;
     public string eventToTrigger2;
     public string eventToTrigger3;
-    public string eventToTrigger4;
 
     private int nbDrunk = 0;
 
@@ -36,8 +35,8 @@ public class Jug : MonoBehaviour, IInteractable {
 
     public void Interact() {
         Drink();
-        EventSystemManager.Instance.TriggerEvent(ActHandler());
         nbDrunk += 1;
+        EventSystemManager.Instance.TriggerEvent(ActHandler());
     }
 
     private void Drink()
@@ -89,17 +88,14 @@ public class Jug : MonoBehaviour, IInteractable {
     private string ActHandler()
     {
         switch(nbDrunk){
-            case 0:
+            case 1:
                 return eventToTrigger1;
             
-            case 1:
+            case 2:
                 return eventToTrigger2;
             
-            case 2:
-                return eventToTrigger3;
-            
             default:
-                return eventToTrigger4;
+                return eventToTrigger3;
         }
     }
 

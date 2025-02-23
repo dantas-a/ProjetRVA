@@ -2804,8 +2804,8 @@ MonoBehaviour:
     - "Je ne veux m\xEAme pas ton \xE2me. Je pr\xE9f\xE8re retourner en enfer. EEww,
       j\u2019en reviens pas. "
     dialogueVoices:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 73a7b9fc0b925694daf79016449a392e, type: 3}
+    - {fileID: 8300000, guid: 0d49ab39a33f7984498a47cc7c6ce0a4, type: 3}
     endInteractionEvent: Demon disparait
   triggers: []
 --- !u!143 &149532831
@@ -13466,6 +13466,7 @@ Transform:
   - {fileID: 370557611}
   - {fileID: 1191022645}
   - {fileID: 1981909577}
+  - {fileID: 615377566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &526871732 stripped
@@ -14219,6 +14220,11 @@ PrefabInstance:
       addedObject: {fileID: 923625149}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86d84285ef39db64c986f37878b14861, type: 3}
+--- !u!4 &615377566 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400134, guid: c375a17f5f510d44c839b216989e242d, type: 3}
+  m_PrefabInstance: {fileID: 1798621731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &625190834 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 435304, guid: 526a7966ccaa21a478875fa72207388c, type: 3}
@@ -14987,9 +14993,11 @@ MonoBehaviour:
   farmer: {fileID: 1899683473}
   tPose: {fileID: 1706561163}
   demonGirl: {fileID: 149532826}
+  lookAtPlayerDemon: {fileID: 0}
   hunter: {fileID: 186668375}
   jug: {fileID: 1944788754}
   guard3: {fileID: 15627778}
+  invoc: {fileID: 0}
 --- !u!4 &676952527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4252626517937582, guid: fda1d3f77ff15b5418d4d69ec55dc702, type: 3}
@@ -15233,13 +15241,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694296819}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcbd43716693bc04db9605b88cd11149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   postProcessVolume: {fileID: 694296820}
-  colorShiftSpeed: 1.5
+  effectDuration: 40
+  fadeOutDuration: 10
+  fadeInDuration: 10
+  colorShiftSpeed: 1
 --- !u!114 &694296822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15247,17 +15258,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694296819}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03644e5feedc60246b08b920dbad787b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   postProcessVolume: {fileID: 694296820}
-  distortionIntensity: 0.3
-  wobbleSpeed: 2
-  wobbleAmount: 0.1
-  flou: 0.5
-  ombre: 0.4
+  distortionIntensity:
+  - 0
+  - 0.3
+  - 0.3
+  wobbleSpeed:
+  - 0
+  - 0.5
+  - 0.5
+  wobbleAmount:
+  - 0
+  - 0.2
+  - 0.2
+  flou:
+  - 0
+  - 4
+  - 4
+  ombre:
+  - 0
+  - 0.6
+  - 0.6
+  lvl: 0
 --- !u!4 &694296823
 Transform:
   m_ObjectHideFlags: 0
@@ -15300,6 +15327,9 @@ MonoBehaviour:
     eventText: "Le pilleur retourne au fin fond de la for\xEAt."
     audio: {fileID: 8300000, guid: 06a12bc7c4d6c394788af4f821a29656, type: 3}
   - eventName: Dialogue Fermier 4
+    eventText: Le fermier rentre chez lui nettoyer sa tunique.
+    audio: {fileID: 8300000, guid: ab589e551d36bd541a7e3e2e29c4d39c, type: 3}
+  - eventName: Fin
     eventText: Le fermier rentre chez lui nettoyer sa tunique.
     audio: {fileID: 8300000, guid: ab589e551d36bd541a7e3e2e29c4d39c, type: 3}
   transitionCanvas: {fileID: 519593595}
@@ -17429,7 +17459,6 @@ MonoBehaviour:
   eventToTrigger1: 
   eventToTrigger2: 
   eventToTrigger3: 
-  eventToTrigger4: 
   handJug: {fileID: 159396796}
 --- !u!1 &832575517
 GameObject:
@@ -18427,12 +18456,6 @@ MonoBehaviour:
   triggers:
   - eventName: Dialogue Gardes
     newDialogueIndex: 1
-  - eventName: Dialogue Garde1 1
-    newDialogueIndex: 1
-  - eventName: 'Dialogue Garde1 2 '
-    newDialogueIndex: 2
-  - eventName: Dialogue Garde1 3
-    newDialogueIndex: 3
   - eventName: Acte 2
     newDialogueIndex: 2
   - eventName: Acte 3
@@ -21962,6 +21985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JBreathing
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 37b0dc4d531929e44afcfea0eb62163d, type: 3}
+      propertyPath: m_TagString
+      value: Jester
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2463706537061040287, guid: 37b0dc4d531929e44afcfea0eb62163d, type: 3}
@@ -24447,20 +24474,9 @@ MonoBehaviour:
     dialogueLines:
     - "Laissez-moi me concentrer, je mets l\u2019ambiance dans la taverne."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 7a2956422293771429ccdabdc9ec8c28, type: 3}
     endInteractionEvent: 
-  - speakerNames:
-    - Barde
-    dialogueLines:
-    - "Et tu chantes, chantes, chantes ce refrain qui te pla\xEEt Et tu tapes, tapes,
-      tapes c'est ta fa\xE7on d'aimer Ce rythme qui t'entra\xEEne jusqu'au bout de
-      la nuit R\xE9veille en toi le tourbillon d'un vent de folie "
-    dialogueVoices:
-    - {fileID: 0}
-    endInteractionEvent: 
-  triggers:
-  - eventName: Acte 4
-    newDialogueIndex: 1
+  triggers: []
 --- !u!143 &1260313387
 CharacterController:
   m_ObjectHideFlags: 0
@@ -25559,11 +25575,139 @@ MonoBehaviour:
   interactions:
   - speakerNames:
     - Bouffon
+    - Bouffon
+    - Bouffon
     dialogueLines:
-    - J'ai pas de blagues pour le moment
+    - "Je suis VanneLaD, le bouffon, celui qui jongle avec les mots et glisse des
+      farces plus aiguis\xE9es que l\u2019\xE9p\xE9e d\u2019un chevalier maladroit
+      !"
+    - "Que d\xE9sires-tu, \xF4 ma\xEEtre des \xE9clats de rire ? Une histoire cocasse
+      ? Une devinette \xE0 faire p\xE2lir un philosophe ? Une tirade moqueuse pour
+      \xE9gratigner tes ennemis avec panache ? "
+    - "Dis-moi tout, et je le tournerai en d\xE9rision royale ! "
     dialogueVoices:
-    - {fileID: 0}
-    endInteractionEvent: 
+    - {fileID: 8300000, guid: 676decb0cd233544287eadd728e364df, type: 3}
+    - {fileID: 8300000, guid: 121d85e87c10a1d4caa021b9d8317d6c, type: 3}
+    - {fileID: 8300000, guid: 89b598f6ccdbc5a488877956dac60cc2, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - "Pourquoi les l\xE9preux ne jouent-ils jamais \xE0 cache-cache ? "
+    - "Parce que quand ils comptent jusqu'\xE0 dix, ils perdent un doigt \xE0 chaque
+      chiffre."
+    dialogueVoices:
+    - {fileID: 8300000, guid: 1250cf9c623a6b64793b9ea60d5c8cbd, type: 3}
+    - {fileID: 8300000, guid: 3b437588c88cf2a478a5fc2a49ad7ea4, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - "Quelle est la diff\xE9rence entre un noble ruin\xE9 et un paysan ? "
+    - 'Aucune, ils finissent tous les deux pendus pour vol. '
+    dialogueVoices:
+    - {fileID: 8300000, guid: 959e7f1e9fe86d740a2ae8682ea25c3c, type: 3}
+    - {fileID: 8300000, guid: 0fd4d70a9b621494d9440860d01407d4, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - "Pourquoi les femmes accus\xE9es de sorcellerie n'ont-elles jamais de chance
+      ?"
+    - "Parce que la seule magie qu\u2019elles connaissent, c\u2019est celle d\u2019\xEAtre
+      br\xFBl\xE9es vives."
+    dialogueVoices:
+    - {fileID: 8300000, guid: 5a5fa673779f9c244aae2b651f7db4d7, type: 3}
+    - {fileID: 8300000, guid: 83ebbc07dc701894a9a8a97d2c9c9e93, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - "Pourquoi les buveurs de bi\xE8re sont-ils toujours heureux ?"
+    - "Parce qu\u2019ils savent qu\u2019il n\u2019y a pas de probl\xE8me qu\u2019un
+      bon f\xFBt ne puisse r\xE9soudre\u2026 sauf peut-\xEAtre l'alcoolisme."
+    dialogueVoices:
+    - {fileID: 8300000, guid: 2a2f00f356ca02a4fb1bc533bd41f7a9, type: 3}
+    - {fileID: 8300000, guid: 9eeb556e7b993314c81e5fd7299cd35e, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - "Pourquoi les sorci\xE8res ne trouvent-elles jamais l\u2019amour ?"
+    - "Parce que quand elles lancent un sort, c\u2019est toujours un coup de foudre\u2026
+      mais dans le mauvais sens."
+    dialogueVoices:
+    - {fileID: 8300000, guid: c64a11f47c8e92548a043b993a931d11, type: 3}
+    - {fileID: 8300000, guid: f012a4122470d3a45a6a6bad0202a0ab, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - "Que fait un ivrogne dans une taverne apr\xE8s avoir trop bu ?"
+    - " Il cherche un coin sombre, non pas pour dormir, mais pour perdre son honneur
+      avant de repartir sans argent ni dignit\xE9."
+    dialogueVoices:
+    - {fileID: 8300000, guid: bfdec13dbf87a734ab764c70837d335b, type: 3}
+    - {fileID: 8300000, guid: bfdec13dbf87a734ab764c70837d335b, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - "Pourquoi les bouffons pr\xE9f\xE8rent-ils la taverne au ch\xE2teau ? "
+    - "Parce qu'\xE0 la taverne, tout le monde rigole\u2026 mais personne ne se doute
+      que tu es le plus intelligent de la pi\xE8ce."
+    dialogueVoices:
+    - {fileID: 8300000, guid: 11a483dff458fe944ae171d6561a9ba4, type: 3}
+    - {fileID: 8300000, guid: 279586a41db1bbb4ead5eb675086c017, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - "Qu\u2019est-ce qu\u2019un chevalier dit apr\xE8s un festin ?"
+    - "Le vomi, c\u2019est le seul ennemi que je ne peux pas trancher."
+    dialogueVoices:
+    - {fileID: 8300000, guid: 4f00a6dd07c6b3b43b2c1fd05cf8b933, type: 3}
+    - {fileID: 8300000, guid: b01918e6549450f46b31f40f6da7ddcc, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - Pourquoi les taverniers aiment le vomi des clients ?
+    - "Parce que c\u2019est plus de travail, mais aussi plus de place pour la bi\xE8re."
+    dialogueVoices:
+    - {fileID: 8300000, guid: fba6604e5437f9644872f4db4b3e7863, type: 3}
+    - {fileID: 8300000, guid: 8f48a5a8676a00f48b5a23d19236270f, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - "Qu'est-ce qu'un magicien dit \xE0 son apprenti qui a rat\xE9 un sort ?"
+    - "Bon, c\u2019est pas grave, maintenant on va juste devoir expliquer pourquoi
+      la licorne a pris feu\u2026"
+    dialogueVoices:
+    - {fileID: 8300000, guid: 0ffea021a133cd7459470e202de90b8e, type: 3}
+    - {fileID: 8300000, guid: e6ec12a7adbb44a44a0d46a53012ac78, type: 3}
+    endInteractionEvent: Blague
+  - speakerNames:
+    - Bouffon
+    - Bouffon
+    dialogueLines:
+    - "Comment un paysan d\xE9clare-t-il son amour ?"
+    - "Je t\u2019aime plus que la boue de mes champs. Et crois-moi, c\u2019est beaucoup."
+    dialogueVoices:
+    - {fileID: 8300000, guid: 5ae0b494db51d0348a39ee9098e44956, type: 3}
+    - {fileID: 8300000, guid: 4a49bfa323b040a438cebff4d70107ab, type: 3}
+    endInteractionEvent: Blague
   triggers: []
 --- !u!143 &1316206889
 CharacterController:
@@ -25758,7 +25902,7 @@ MonoBehaviour:
       anfassen. Eahh mann bist du taub oder so?   Eah t\xFC parlez all.man?"
     dialogueVoices:
     - {fileID: 8300000, guid: 1dacc6fc416c30a4d95142a3153afa0b, type: 3}
-    endInteractionEvent: 
+    endInteractionEvent: Samurai 1
   - speakerNames:
     - Maitre Yoda
     dialogueLines:
@@ -25767,7 +25911,7 @@ MonoBehaviour:
       und die Kreature."
     dialogueVoices:
     - {fileID: 8300000, guid: a84ffdcd123184a41acf9aff7b09c745, type: 3}
-    endInteractionEvent: 
+    endInteractionEvent: Samurai 2
   - speakerNames:
     - Maitre Yoda
     dialogueLines:
@@ -25776,8 +25920,14 @@ MonoBehaviour:
       alles \xFCber Larry der hinterh\xE4ltige."
     dialogueVoices:
     - {fileID: 8300000, guid: eab770b788aa64046b9ce86e396180fd, type: 3}
-    endInteractionEvent: 
-  triggers: []
+    endInteractionEvent: Samurai 3
+  triggers:
+  - eventName: Samurai 1
+    newDialogueIndex: 1
+  - eventName: Samurai 2
+    newDialogueIndex: 2
+  - eventName: Samurai 3
+    newDialogueIndex: 0
 --- !u!82 &1321551969
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26587,7 +26737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531033443d60419408285485544d92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTrigger: Peut prendre collier
+  nameTrigger: Dialogue Pilleur 1
   description: Prendre le collier
 --- !u!65 &1378577929
 BoxCollider:
@@ -27850,7 +28000,7 @@ MonoBehaviour:
     dialogueLines:
     - "Va voir ailleurs si j\u2019y suis."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 2386865f86d2586449295a2b0102b2cc, type: 3}
     endInteractionEvent: Dialogue Pegu 0
   - speakerNames:
     - Pegu
@@ -27861,14 +28011,14 @@ MonoBehaviour:
       T'as qu'\xE0 lui vomir dessus ahaha, nan j\u2019d\xE9conne aller mon fr\xE8re,
       tu trouveras bien un moyen. "
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 896373335378e4e419c9d65ced9bfff2, type: 3}
     endInteractionEvent: Dialogue Pegu 1
   - speakerNames:
     - Pegu
     dialogueLines:
     - 'Alors ces champignons ? '
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: d149161315be6da4d94e14e565473ad6, type: 3}
     endInteractionEvent: Dialogue Pegu 2
   - speakerNames:
     - Pegu
@@ -27878,27 +28028,38 @@ MonoBehaviour:
       partage et chacun sa dose. On va d\xE9coller man. "
     - "WWWoooouuuaaaaaa. C\u2019est un truc de malade"
     dialogueVoices:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 1ef773fa30f928d4394bd68bb8f4f12a, type: 3}
+    - {fileID: 8300000, guid: 680d6a60772599b46b52a14edcf3d235, type: 3}
     endInteractionEvent: "Champignons consomm\xE9s"
   - speakerNames:
     - Pegu
     dialogueLines:
     - EHEHHEHEHE! Ca bouze tans doux les zens.
     dialogueVoices:
+    - {fileID: 8300000, guid: ca926a3606c7c2948bf219af7f8a1a1d, type: 3}
+    endInteractionEvent: 
+  - speakerNames:
+    - Pegu
+    dialogueLines:
+    - ...
+    dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Dialogue Pegu 4
+    endInteractionEvent: 
   triggers:
   - eventName: Dialogue Pegu 0
+    newDialogueIndex: 0
+  - eventName: Acte 2
     newDialogueIndex: 1
   - eventName: Dialogue Pegu 1
     newDialogueIndex: 2
   - eventName: Dialogue Pegu 2
     newDialogueIndex: 2
-  - eventName: Cueillir le champignon
+  - eventName: Champignon pris
     newDialogueIndex: 3
   - eventName: "Champignons consomm\xE9s"
     newDialogueIndex: 4
+  - eventName: Dialogue Fermier 5
+    newDialogueIndex: 5
 --- !u!82 &1456750245
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28117,6 +28278,11 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1474928554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
+  m_PrefabInstance: {fileID: 1964438925}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1476876994
 GameObject:
   m_ObjectHideFlags: 0
@@ -30141,7 +30307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531033443d60419408285485544d92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTrigger: Peut prendre champignon
+  nameTrigger: Dialogue Pegu 1
   description: Cueillir le champignon
 --- !u!114 &1646345535
 MonoBehaviour:
@@ -31028,19 +31194,13 @@ MonoBehaviour:
   - speakerNames:
     - Garde 2
     dialogueLines:
-    - esafsaefasef
+    - ...
     dialogueVoices:
     - {fileID: 0}
     endInteractionEvent: Dialogue Garde2 3
   triggers:
   - eventName: Dialogue Gardes
     newDialogueIndex: 1
-  - eventName: Dialogue Garde2 1
-    newDialogueIndex: 1
-  - eventName: Dialogue Garde2 2
-    newDialogueIndex: 2
-  - eventName: Dialogue Garde2 3
-    newDialogueIndex: 3
   - eventName: Acte 2
     newDialogueIndex: 2
   - eventName: Acte 3
@@ -31232,14 +31392,10 @@ MonoBehaviour:
     - Je vole !
     - Jack, je vole !!!
     dialogueVoices:
-    - {fileID: 0}
-    - {fileID: 0}
-    endInteractionEvent: T pose
-  triggers:
-  - eventName: T pose
-    newDialogueIndex: 0
-  - eventName: Acte 3
-    newDialogueIndex: 0
+    - {fileID: 8300000, guid: 00715cc3076837e40b2bdeced3febf31, type: 3}
+    - {fileID: 8300000, guid: 5571705a90222a14a91c5ef14e56d864, type: 3}
+    endInteractionEvent: 
+  triggers: []
 --- !u!143 &1706561167
 CharacterController:
   m_ObjectHideFlags: 0
@@ -32573,7 +32729,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 523572928}
     m_Modifications:
     - target: {fileID: 100134, guid: c375a17f5f510d44c839b216989e242d, type: 3}
       propertyPath: m_Name
@@ -32717,7 +32873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400134, guid: c375a17f5f510d44c839b216989e242d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.5
+      value: 3.4999998
       objectReference: {fileID: 0}
     - target: {fileID: 400134, guid: c375a17f5f510d44c839b216989e242d, type: 3}
       propertyPath: m_LocalScale.y
@@ -32725,19 +32881,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400134, guid: c375a17f5f510d44c839b216989e242d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.5
+      value: 3.4999998
       objectReference: {fileID: 0}
     - target: {fileID: 400134, guid: c375a17f5f510d44c839b216989e242d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 597.763
+      value: 70.2818
       objectReference: {fileID: 0}
     - target: {fileID: 400134, guid: c375a17f5f510d44c839b216989e242d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.3
+      value: 1.4000006
       objectReference: {fileID: 0}
     - target: {fileID: 400134, guid: c375a17f5f510d44c839b216989e242d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 398.087
+      value: -141.15298
       objectReference: {fileID: 0}
     - target: {fileID: 400134, guid: c375a17f5f510d44c839b216989e242d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33164,7 +33320,7 @@ MonoBehaviour:
     dialogueLines:
     - "Oye compagnon, t\u2019es nouveau ici toi non ? J\u2019vais te donner une chope."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 015b8b9e21592fd469bfd5fe70afbab5, type: 3}
     endInteractionEvent: Dialogue Tavernier 0
   - speakerNames:
     - Toi
@@ -33172,13 +33328,13 @@ MonoBehaviour:
     dialogueLines:
     - "Et beh patron, il y a trou dans mon verre ou quoi ? Il est vachement vide
       le godet l\xE0 !"
-    - "HAHAHAHAHAHA, eh non mon cochon, c\u2019est juste que mon f\xFBt de bi\xE8re
-      aux trois herbes est vide. Mais si tu vas m\u2019en chercher un autre, toutes
-      les bi\xE8res sont offertes pour toi\u202F! Les tonneaux sont stock\xE9s \xE0
-      l\u2019\xE9tage, ram\xE8ne-m'en donc un."
+    - "Eh non mon cochon, c\u2019est juste que mon f\xFBt de bi\xE8re aux trois herbes
+      est vide. Mais si tu vas m\u2019en chercher un autre, toutes les bi\xE8res
+      sont offertes pour toi\u202F! Les tonneaux sont stock\xE9s \xE0 l\u2019\xE9tage,
+      ram\xE8ne-m'en donc un."
     dialogueVoices:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 3ee75b14befd8ce4da3f32d5545a2a8d, type: 3}
+    - {fileID: 8300000, guid: 65e2e2a0c53b83941b9b342eb4f1bf66, type: 3}
     endInteractionEvent: Dialogue Tavernier 1
   - speakerNames:
     - Tavernier
@@ -33186,20 +33342,22 @@ MonoBehaviour:
     - "Oh toi ! On va devenir de bons amis. Ce soir, c\u2019est gratuit pour mon
       seigneur."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 7530e239bba9b3943b3a4086f4dc6504, type: 3}
     endInteractionEvent: Dialogue Tavernier 2
   - speakerNames:
     - Tavernier
     dialogueLines:
     - Et une chope remplie pour mon coupaing.
     dialogueVoices:
-    - {fileID: 0}
-    endInteractionEvent: Dialogue Tavernier 2
+    - {fileID: 8300000, guid: 4354afe8b0f40354c8f1d27eb9e539fb, type: 3}
+    endInteractionEvent: Dialogue Tavernier 3
   triggers:
   - eventName: Dialogue Tavernier 0
     newDialogueIndex: 1
   - eventName: Tonneau Pris
     newDialogueIndex: 2
+  - eventName: Dialogue Tavernier 2
+    newDialogueIndex: 3
 --- !u!143 &1814695425
 CharacterController:
   m_ObjectHideFlags: 0
@@ -33857,7 +34015,7 @@ MonoBehaviour:
     - OOh tu vas mal repartir mon copain !
     dialogueVoices:
     - {fileID: 8300000, guid: 5e64dbef3e8a0d5469cea88d66ea32e0, type: 3}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 307c5965444a43344ab9cf903b9a98e8, type: 3}
     - {fileID: 0}
     - {fileID: 8300000, guid: 2c79ec339b06541428b7bf6788a727b9, type: 3}
     endInteractionEvent: Dialogue Fermier 5
@@ -34318,7 +34476,7 @@ MonoBehaviour:
       digne des festins royaux ! Rendez-vous aupr\xE8s du tavernier derri\xE8re le
       comptoir. "
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 0453cab9fa2ea32479d657bbf640d788, type: 3}
     endInteractionEvent: Dialogue Servante 0
   - speakerNames:
     - Servante
@@ -34327,28 +34485,28 @@ MonoBehaviour:
       le fameux Trouba La D, est parmi nous. Venez l\u2019\xE9couter conter ses meilleures
       blagues !"
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 230e296f1d4eaa94e9eccf85e7d671cd, type: 3}
     endInteractionEvent: Dialogue Servante 1
   - speakerNames:
     - Servante
     dialogueLines:
     - "Rendez-vous aupr\xE8s du tavernier derri\xE8re le comptoir."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 8c7cd7df7a168784a8919a1fe0ccc100, type: 3}
     endInteractionEvent: Dialogue Servante 2
   - speakerNames:
     - Servante
     dialogueLines:
     - "Rendez-vous aupr\xE8s du tavernier derri\xE8re le comptoir."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 8c7cd7df7a168784a8919a1fe0ccc100, type: 3}
     endInteractionEvent: Dialogue Servante 3
   - speakerNames:
     - Servante
     dialogueLines:
     - "T\u2019es lourd l\xE0, va voir le tavernier. TSS"
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: cd2d0e93520e7f4498b48b59f10ab84c, type: 3}
     endInteractionEvent: Dialogue Servante 4
   - speakerNames:
     - Servante
@@ -34374,7 +34532,7 @@ MonoBehaviour:
       du vomi demain matin\u2026 Pfff."
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Dialogue Servante 6
+    endInteractionEvent: Dialogue Servante 7
   triggers:
   - eventName: Dialogue Servante 0
     newDialogueIndex: 1
@@ -34394,7 +34552,7 @@ MonoBehaviour:
     newDialogueIndex: 6
   - eventName: Dialogue Servante 6
     newDialogueIndex: 7
-  - eventName: Dialogue Servante 5
+  - eventName: Dialogue Servante 7
     newDialogueIndex: 7
 --- !u!4 &1923823800 stripped
 Transform:
@@ -35006,11 +35164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3336a3fe3c3216a448330a929b62284e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTrigger1: Dialogue Tavernier 2
-  eventToTrigger1: Acte 1
-  eventToTrigger2: Acte 2
-  eventToTrigger3: Acte 3
-  eventToTrigger4: Acte 4
+  nameTrigger1: Dialogue Tavernier 3
+  eventToTrigger1: Acte 2
+  eventToTrigger2: Acte 3
+  eventToTrigger3: Fin
   handJug: {fileID: 159396796}
 --- !u!114 &1944788760
 MonoBehaviour:
@@ -35099,13 +35256,70 @@ PrefabInstance:
     - {fileID: -3526374522685079281, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
     - {fileID: -1813655689920317231, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1964438929}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1964438928}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1964438927}
   m_SourcePrefab: {fileID: 100100000, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
 --- !u!4 &1964438926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
   m_PrefabInstance: {fileID: 1964438925}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1964438927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474928554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 531033443d60419408285485544d92bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTrigger: Prendre le collier
+  description: Utiliser L'artefacte
+--- !u!114 &1964438928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474928554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289cc4388b9f6064ab72d350a39c8c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventToTrigger: Demon invoque
+--- !u!65 &1964438929
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474928554}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 6, z: 3}
+  m_Center: {x: 4.72, y: 2.74, z: 0}
 --- !u!1 &1966493368
 GameObject:
   m_ObjectHideFlags: 0
@@ -38286,7 +38500,6 @@ SceneRoots:
   - {fileID: 1706561162}
   - {fileID: 1260313382}
   - {fileID: 1923823794}
-  - {fileID: 1798621731}
   - {fileID: 1253352549}
   - {fileID: 1094793750}
   - {fileID: 1814695418}
