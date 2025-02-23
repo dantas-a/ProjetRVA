@@ -28221,6 +28221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Civilian 3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_TagString
+      value: BagarreFermier
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -28399,7 +28403,7 @@ MonoBehaviour:
   - speakerNames:
     - Fermier
     dialogueLines:
-    - "La taverne, c\u2019est l\u2019autre b\xE2timent. Ici, c\u2019est mon champs,
+    - "La taverne, c\u2019est l\u2019autre b\xE2timent. Ici, c\u2019est mon champ,
       du balai."
     dialogueVoices:
     - {fileID: 8300000, guid: 30b7cc8aaba10fd4cb43bb0e61d852b9, type: 3}
@@ -28512,6 +28516,10 @@ PrefabInstance:
     - target: {fileID: 100010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       propertyPath: m_Name
       value: Basic_Bandit
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
+      propertyPath: m_TagString
+      value: BagarrePegu
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: fe55e5a0c1bcd72488aa4508bea6f93b, type: 3}
       propertyPath: m_LocalPosition.x

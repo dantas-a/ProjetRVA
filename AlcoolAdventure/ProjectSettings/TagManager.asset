@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - BanditPlayer
   - Ladder
-  - Hunter
+  - BagarreFermier
+  - BagarrePegu
   layers:
   - Default
   - TransparentFX

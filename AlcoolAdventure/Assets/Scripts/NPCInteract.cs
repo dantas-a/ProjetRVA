@@ -24,11 +24,15 @@ public class NPCInteract : MonoBehaviour, IInteractable {
 
     private bool isTalking = false;
 
-    public void Awake()
+    private GameObject pegu;
+
+    public void Start()
     {
         animator = GetComponent<Animator>();
         lookAtPlayer = GetComponent<LookAtPlayer>();
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
+        EventSystemManager.Instance.SubscribeToEvent("Dialogue Fermier 5", () => fight());
+        pegu = GameObject.FindGameObjectWithTag("BagarrePegu");
     }
 
     public string GetDescription()
@@ -66,7 +70,7 @@ public class NPCInteract : MonoBehaviour, IInteractable {
     private void showCanvaDialogue(string nameNPC, string textNPC){
         if (nameNPC != null && textNPC != null) {   
             //Time.timeScale = 0f;
-            isTalking = !isTalking;
+            isTalking = true;
             if(animator != null) animator.SetBool("isTalking", isTalking);
             playerMovement.CanMove = false;
             dialogueCanvas.SetActive(true);
@@ -78,9 +82,25 @@ public class NPCInteract : MonoBehaviour, IInteractable {
 
     private void hideCanvaDialogue(){
         //Time.timeScale = 1f;
-        isTalking = !isTalking;
+        isTalking = false;
         if(animator != null) animator.SetBool("isTalking", isTalking);
         playerMovement.CanMove = true;
         dialogueCanvas.SetActive(false);
+    }
+
+    private void fight(){
+        if(CompareTag("BagarreFermier")){
+            animator.SetTrigger("fightFarmer");
+            canBeInteractedWith = false;
+            pegu.GetComponent<LookAtPlayer>().lookat(transform.position);
+            lookAtPlayer.lookat(pegu.GetComponent<Transform>().position);
+            pegu.GetComponent<Animator>().SetTrigger("fightBandit");
+            pegu.GetComponent<NPCInteract>().canBeInteractedWith = false;
+            Invoke("delayFarmerFight", 15.0f);
+        }
+    }
+
+    private void delayFarmerFight(){
+        canBeInteractedWith = true;
     }
 }

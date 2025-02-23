@@ -26,7 +26,7 @@ public class HandleTPCharacter : MonoBehaviour
         hunter.SetActive(false);
         EventSystemManager.Instance.SubscribeToEvent("Acte 1", () => hunter.SetActive(true));
         EventSystemManager.Instance.SubscribeToEvent("Dialogue Pilleur 0", () => hunter.SetActive(false));
-        EventSystemManager.Instance.SubscribeToEvent("Acte 2", () => {
+        EventSystemManager.Instance.SubscribeToEvent("Acte 3", () => {
             hunter.SetActive(true);
             hunter.transform.position = new Vector3(559.2015f, 7.776f, 417.0407f);
         });
@@ -35,10 +35,20 @@ public class HandleTPCharacter : MonoBehaviour
         // Démone
         demonGirl.SetActive(false);
         EventSystemManager.Instance.SubscribeToEvent("Demon invoque", () => demonGirl.SetActive(true));
+        EventSystemManager.Instance.SubscribeToEvent("Demon disparait", () => demonGirl.SetActive(false));
 
         // Guarde du cimetière
         guard3.SetActive(false);
-        EventSystemManager.Instance.SubscribeToEvent("Acte 2", () => guard3.SetActive(true));
+        EventSystemManager.Instance.SubscribeToEvent("Acte 3", () => guard3.SetActive(true));
+
+        // Fermier
+        EventSystemManager.Instance.SubscribeToEvent("Dialogue Fermier 4", () => farmer.SetActive(false));
+        EventSystemManager.Instance.SubscribeToEvent("Acte 3", () => {
+            farmer.SetActive(true);
+            farmer.transform.position = new Vector3(522.5401f, 0.07999986f, 547.7269f);
+        });
+
+
 
     }
 
