@@ -2260,8 +2260,8 @@ MonoBehaviour:
   menuCanvas: {fileID: 1139281449}
   transitionCanvas: {fileID: 1313295955}
   narrativeText: {fileID: 676920050}
-  clip: {fileID: 0}
-  typewriterSpeed: 0.06
+  clip: {fileID: 8300000, guid: 93cc3695c1cd2ef42bcbbe020d3b677a, type: 3}
+  typewriterSpeed: 0.05
   intro: "Apr\xE8s une dure journ\xE9e \xE0 labourer ces maudits champs, apr\xE8s
     une vie de labeur et de disgr\xE2ce, il est temps de t\u2019accorder une pause
     bien m\xE9rit\xE9e. Par Sainte Bi\xE8re et Saint Vinasse, tu l\u2019as bien m\xE9rit\xE9

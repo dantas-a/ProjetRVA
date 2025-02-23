@@ -3744,7 +3744,7 @@ MonoBehaviour:
     dialogueLines:
     - "Rejoins-moi au cimeti\xE8re plus tard."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 098469dc86a437d46a3d483c1773f091, type: 3}
     endInteractionEvent: Dialogue Pilleur 0
   - speakerNames:
     - Pilleur de tombes
@@ -3754,7 +3754,7 @@ MonoBehaviour:
       vaudrait un sacr\xE9 pactole. Apporte-le-moi et je veillerai \xE0 ce que tu
       sois r\xE9compens\xE9."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: d54fc499b0ab0f14fba711aadf89953c, type: 3}
     endInteractionEvent: Dialogue Pilleur 1
   - speakerNames:
     - Pilleur de tombes
@@ -3763,7 +3763,7 @@ MonoBehaviour:
       le point du jour si on ne veut pas se faire voir. Il faut que je termine ce
       fichu rituel."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 86816b9e46d32bd4e8ae6952cb734e1c, type: 3}
     endInteractionEvent: Dialogue Pilleur 2
   - speakerNames:
     - Pilleur de tombes
@@ -3771,7 +3771,7 @@ MonoBehaviour:
     - "Eh bien, je ne pensais pas que tu y arriverais. Merci pour l\u2019art\xE9fact,
       et pour ta r\xE9compense\u2026 Je te laisse la vie sauve, estime-toi heureux."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 956aee4757648c64587dac26d954f81a, type: 3}
     endInteractionEvent: 
   - speakerNames:
     - Toi
@@ -3782,6 +3782,7 @@ MonoBehaviour:
     - "Je me doutais que tu n\u2019en \xE9tais pas capable."
     dialogueVoices:
     - {fileID: 0}
+    - {fileID: 8300000, guid: 7e8b520ab38413e4fb1e9d0febf6f78c, type: 3}
     endInteractionEvent: 
   triggers:
   - eventName: Dialogue Pilleur 0
@@ -10088,6 +10089,7 @@ GameObject:
   - component: {fileID: 694296821}
   - component: {fileID: 694296820}
   - component: {fileID: 694296824}
+  - component: {fileID: 694296825}
   m_Layer: 0
   m_Name: EffectsController
   m_TagString: Untagged
@@ -10174,23 +10176,120 @@ MonoBehaviour:
   triggers:
   - eventName: Demon invoque
     eventText: "Une D\xE9mone sauvage apparait !"
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 6a90bce4c2d9a214db5905dbe9b28483, type: 3}
   - eventName: Demon disparait
     eventText: "Une D\xE9mone sauvage a prit la fuite !"
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 1554bf7b4dc3d4a41bb6807a5e0d952c, type: 3}
   - eventName: TP
     eventText: "Un garde vous a trouv\xE9 perdu dans la for\xEAt et vous a ramen\xE9
       au Bouc Affam\xE9 des Faubourgs."
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 8f30d9a873797464fbc7324d874c921a, type: 3}
   - eventName: Dialogue Pilleur 0
     eventText: "Le pilleur retourne au fin fond de la for\xEAt."
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 06a12bc7c4d6c394788af4f821a29656, type: 3}
   - eventName: Dialogue Fermier 4
     eventText: Le fermier rentre chez lui nettoyer sa tunique.
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: ab589e551d36bd541a7e3e2e29c4d39c, type: 3}
   transitionCanvas: {fileID: 519593595}
   narrativeText: {fileID: 664320067}
   typewriterSpeed: 0.06
+--- !u!82 &694296825
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694296819}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &700134395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28303,28 +28402,28 @@ MonoBehaviour:
     - "La taverne, c\u2019est l\u2019autre b\xE2timent. Ici, c\u2019est mon champs,
       du balai."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 30b7cc8aaba10fd4cb43bb0e61d852b9, type: 3}
     endInteractionEvent: Dialogue Fermier 0
   - speakerNames:
     - Fermier
     dialogueLines:
     - Du vent !!
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 465ef16dc095f4242b78ab2fb1f08774, type: 3}
     endInteractionEvent: Dialogue Fermier 1
   - speakerNames:
     - Fermier
     dialogueLines:
     - Ouste !!
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 920b8562dda11fc448d7c6e8abc7b17a, type: 3}
     endInteractionEvent: Dialogue Fermier 2
   - speakerNames:
     - Fermier
     dialogueLines:
     - Vous ne passerez paaaaaas.
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: ef57a1a04e17518419859fcf9e926c9a, type: 3}
     endInteractionEvent: Dialogue Fermier 3
   - speakerNames:
     - Fermier
@@ -28332,7 +28431,7 @@ MonoBehaviour:
     - "Ah bah, c'est bien \xE7a, super pour ma tunique, g\xE9niale, j\u2019te remercie,
       elle est foutue, c'est pas grave, ah euh hein t'es vraiment un sale petit con."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 2bb48b1c81b538744b8c1eccf049f368, type: 3}
     endInteractionEvent: Dialogue Fermier 4
   - speakerNames:
     - Fermier
@@ -28348,17 +28447,17 @@ MonoBehaviour:
     - "HEeeiin.. Quoi.. kesako ?! Les champis\u2026 Sont zuper bons EHHEHe !!!"
     - OOh tu vas mal repartir mon copain !
     dialogueVoices:
+    - {fileID: 8300000, guid: 5e64dbef3e8a0d5469cea88d66ea32e0, type: 3}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 2c79ec339b06541428b7bf6788a727b9, type: 3}
     endInteractionEvent: Dialogue Fermier 5
   - speakerNames:
     - Fermier
     dialogueLines:
     - Fallait pas me voler, saligaud.
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: b18197493e241524bada10b3dff439ca, type: 3}
     endInteractionEvent: Dialogue Fermier 6
   triggers:
   - eventName: Dialogue Fermier 0
