@@ -3831,7 +3831,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!4 &191632485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4361623287756760, guid: 6d2bb9154d502fd46a5faf6e3b55f9f1, type: 3}
@@ -9708,6 +9708,7 @@ GameObject:
   - component: {fileID: 672380921}
   - component: {fileID: 672380924}
   - component: {fileID: 672380925}
+  - component: {fileID: 672380926}
   m_Layer: 0
   m_Name: CameraPlayer
   m_TagString: MainCamera
@@ -9858,6 +9859,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1fdfcd8ce515354695e96274231fa3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &672380926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672380919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a833dcfa436dc04eb404fa4222dee8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farmer: {fileID: 1899683473}
+  tPose: {fileID: 1706561163}
+  demonGirl: {fileID: 149532826}
+  hunter: {fileID: 186668375}
+  jug: {fileID: 1944788754}
+  guard3: {fileID: 15627778}
 --- !u!4 &676952527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4252626517937582, guid: fda1d3f77ff15b5418d4d69ec55dc702, type: 3}
@@ -10171,7 +10190,6 @@ MonoBehaviour:
     audio: {fileID: 0}
   transitionCanvas: {fileID: 519593595}
   narrativeText: {fileID: 664320067}
-  fadeDuration: 1
   typewriterSpeed: 0.06
 --- !u!1001 &700134395
 PrefabInstance:
@@ -17025,13 +17043,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 17730218769033211, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 186668380}
+    - target: {fileID: 17730218769033211, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 819084724}
+    - target: {fileID: 17730218769033211, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: speakerText
+      value: 
+      objectReference: {fileID: 998634569}
+    - target: {fileID: 17730218769033211, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1276518326}
+    - target: {fileID: 17730218769033211, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: dialogueCanvas
+      value: 
+      objectReference: {fileID: 868202575}
     - target: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
       propertyPath: m_Name
       value: Hunter
       objectReference: {fileID: 0}
     - target: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
       propertyPath: m_TagString
-      value: Hunter
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26839,7 +26877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531033443d60419408285485544d92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTrigger: Peut prendre tonneau
+  nameTrigger: Dialogue Tavernier 1
   description: Prendre le tonneau
 --- !u!114 &1786738783
 MonoBehaviour:
@@ -26853,7 +26891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289cc4388b9f6064ab72d350a39c8c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventToTrigger: Tonneau pris
+  eventToTrigger: Tonneau Pris
 --- !u!1001 &1790084969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27656,7 +27694,11 @@ MonoBehaviour:
     dialogueVoices:
     - {fileID: 0}
     endInteractionEvent: Dialogue Tavernier 2
-  triggers: []
+  triggers:
+  - eventName: Dialogue Tavernier 0
+    newDialogueIndex: 1
+  - eventName: Tonneau Pris
+    newDialogueIndex: 2
 --- !u!143 &1814695425
 CharacterController:
   m_ObjectHideFlags: 0
@@ -29440,7 +29482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3336a3fe3c3216a448330a929b62284e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTrigger1: Peut boire
+  nameTrigger1: Dialogue Tavernier 2
   eventToTrigger1: Acte 1
   eventToTrigger2: Acte 2
   eventToTrigger3: Acte 3
@@ -32317,7 +32359,6 @@ SceneRoots:
   - {fileID: 881929361}
   - {fileID: 1704697934}
   - {fileID: 15627777}
-  - {fileID: 1108391489}
   - {fileID: 1899683472}
   - {fileID: 1706561162}
   - {fileID: 1260313382}
@@ -32327,3 +32368,4 @@ SceneRoots:
   - {fileID: 1094793750}
   - {fileID: 1814695418}
   - {fileID: 1321551961}
+  - {fileID: 1108391489}

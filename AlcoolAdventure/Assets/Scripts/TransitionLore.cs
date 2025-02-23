@@ -61,7 +61,7 @@ public class TransitionLore : MonoBehaviour
         playerMovement.Transition = true;
         
         audioSource.PlayOneShot(audio);
-        // 🖋️ Écriture progressive du texte
+        //  Écriture progressive du texte
         yield return StartCoroutine(TypewriterEffect(text));
 
         // Active la possibilité de quitter (après la fin du texte)
