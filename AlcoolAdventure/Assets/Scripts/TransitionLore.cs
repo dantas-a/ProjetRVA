@@ -37,7 +37,6 @@ public class TransitionLore : MonoBehaviour
         {
             EventSystemManager.Instance.SubscribeToEvent(trigger.eventName, () => ShowNarrative(trigger.eventText, trigger.audio));
         }
-        EventSystemManager.Instance.SubscribeToEvent("Fin", () => SceneManager.LoadSceneAsync(0));
     }
 
     private void Update()
@@ -54,6 +53,9 @@ public class TransitionLore : MonoBehaviour
     {
         isNarrativeActive = true;
         StartCoroutine(NarrativeRoutine(text,audio));
+        if (text == "Fin"){
+            SceneManager.LoadSceneAsync(0);
+        }
     }
 
     private IEnumerator NarrativeRoutine(string text, AudioClip audio)

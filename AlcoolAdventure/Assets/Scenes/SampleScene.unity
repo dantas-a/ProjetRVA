@@ -13285,8 +13285,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -297.875}
-  m_SizeDelta: {x: -100, y: -744.25}
+  m_AnchoredPosition: {x: 0, y: -305}
+  m_SizeDelta: {x: -100, y: -730}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &514401650
 MonoBehaviour:
@@ -15643,7 +15643,7 @@ MonoBehaviour:
   - eventName: Artefact rendu
     eventText: "Le pilleur retourne au fin fond de la for\xEAt."
     audio: {fileID: 8300000, guid: 06a12bc7c4d6c394788af4f821a29656, type: 3}
-  - eventName: Dialogue Pilleur 0
+  - eventName: Artefact pas rendu
     eventText: "Le pilleur retourne au fin fond de la for\xEAt."
     audio: {fileID: 8300000, guid: 06a12bc7c4d6c394788af4f821a29656, type: 3}
   transitionCanvas: {fileID: 519593595}
@@ -20909,7 +20909,7 @@ MonoBehaviour:
   m_text: Pilleur de Tombes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
-  m_sharedMaterial: {fileID: -633226384356739526, guid: 461671efe58aff44080f23f80e254f22, type: 2}
+  m_sharedMaterial: {fileID: 6137112121520425525, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20974,7 +20974,7 @@ MonoBehaviour:
   m_margin: {x: 34.479126, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &998634570
@@ -25676,7 +25676,7 @@ MonoBehaviour:
     chose au centre du cercle \u2026 peut \xEAtre l\u2019artefact du voleur \u2026"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
-  m_sharedMaterial: {fileID: -633226384356739526, guid: 461671efe58aff44080f23f80e254f22, type: 2}
+  m_sharedMaterial: {fileID: 6137112121520425525, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -25741,7 +25741,7 @@ MonoBehaviour:
   m_margin: {x: 76.06561, y: 24.84124, z: 94.000916, w: 24.82463}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1276518327
@@ -26444,7 +26444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2bf4cf175dcec44bef54ef61496265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameNPC: Parler au Bouffon LOL
+  NameNPC: "Parler \xE0 VanneLaD"
   player: {fileID: 819084724}
   npc: {fileID: 1316206888}
   dialogueCanvas: {fileID: 868202575}
@@ -26764,7 +26764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2bf4cf175dcec44bef54ef61496265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameNPC: Parler au Samurai
+  NameNPC: "Parler \xE0 l'autochtone"
   player: {fileID: 819084724}
   npc: {fileID: 1321551967}
   dialogueCanvas: {fileID: 868202575}
@@ -26784,7 +26784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - speakerNames:
-    - Maitre Yoda
+    - Oupigoupi
     dialogueLines:
     - "H\xF6ren Sie mir zu junger Mann. Heyy du, jaaa du, komm her komm her. Sei
       gewarnt. Larry, der Hinterh\xE4ltige ist unter uns, er wird uns alle nachts
@@ -26793,7 +26793,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 1dacc6fc416c30a4d95142a3153afa0b, type: 3}
     endInteractionEvent: Samurai 1
   - speakerNames:
-    - Maitre Yoda
+    - Oupigoupi
     dialogueLines:
     - "Larry fa ter taouchai. Eines Nachts lief ich gem\xFCtlich nach Hause, da f\xFChlte
       ich in, meine Eier froheren ein und ich sah in: Larry der Hinterh\xE4ltige
@@ -26802,7 +26802,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: a84ffdcd123184a41acf9aff7b09c745, type: 3}
     endInteractionEvent: Samurai 2
   - speakerNames:
-    - Maitre Yoda
+    - Oupigoupi
     dialogueLines:
     - "Lait safer t\xFC? Lait safer t\xFC? Ich kenne alle Gruselgeschichten, versuche
       nicht Angst zu bekommen. Bring moi ancore unee bi\xE8reee und ich erzahle dir
@@ -28955,7 +28955,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.037
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -36213,8 +36213,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -550, y: -100.5}
-  m_SizeDelta: {x: -1300, y: -911}
+  m_AnchoredPosition: {x: -550, y: -92.5}
+  m_SizeDelta: {x: -1300, y: -895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966493370
 MonoBehaviour:
