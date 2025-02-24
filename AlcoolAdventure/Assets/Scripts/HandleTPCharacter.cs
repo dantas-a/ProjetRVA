@@ -33,7 +33,8 @@ public class HandleTPCharacter : MonoBehaviour
         EventSystemManager.Instance.SubscribeToEvent("Dialogue Pilleur 0", () => hunter.SetActive(false));
         EventSystemManager.Instance.SubscribeToEvent("Acte 3", () => hunter.SetActive(true));
         EventSystemManager.Instance.SubscribeToEvent("Dialogue Pilleur 0", () => EventSystemManager.Instance.SubscribeToEvent("Acte 3", () => hunter2.SetActive(true)));
-        ;
+        EventSystemManager.Instance.SubscribeToEvent("Artefact rendu", () => hunter2.SetActive(false));
+        EventSystemManager.Instance.SubscribeToEvent("Artefact pas rendu", () => hunter2.SetActive(false));
 
 
         // Démone

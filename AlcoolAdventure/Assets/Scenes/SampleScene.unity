@@ -3759,55 +3759,7 @@ MonoBehaviour:
     dialogueVoices:
     - {fileID: 8300000, guid: 098469dc86a437d46a3d483c1773f091, type: 3}
     endInteractionEvent: Dialogue Pilleur 0
-  - speakerNames:
-    - Pilleur de tombes
-    dialogueLines:
-    - "T\u2019as du cran gamin, j\u2019ai une mission pour toi. Tu vois le cimeti\xE8re
-      derri\xE8re moi, il y a un art\xE9fact cach\xE9 dans une des tombes qui, parait-il,
-      vaudrait un sacr\xE9 pactole. Apporte-le-moi et je veillerai \xE0 ce que tu
-      sois r\xE9compens\xE9."
-    dialogueVoices:
-    - {fileID: 8300000, guid: d54fc499b0ab0f14fba711aadf89953c, type: 3}
-    endInteractionEvent: Dialogue Pilleur 1
-  - speakerNames:
-    - Pilleur de tombes
-    dialogueLines:
-    - "Ne perds pas de temps, il faut que tu me rapportes l\u2019art\xE9fact avant
-      le point du jour si on ne veut pas se faire voir. Il faut que je termine ce
-      fichu rituel."
-    dialogueVoices:
-    - {fileID: 8300000, guid: 86816b9e46d32bd4e8ae6952cb734e1c, type: 3}
-    endInteractionEvent: Dialogue Pilleur 2
-  - speakerNames:
-    - Pilleur de tombes
-    dialogueLines:
-    - "Eh bien, je ne pensais pas que tu y arriverais. Merci pour l\u2019art\xE9fact,
-      et pour ta r\xE9compense\u2026 Je te laisse la vie sauve, estime-toi heureux."
-    dialogueVoices:
-    - {fileID: 8300000, guid: 956aee4757648c64587dac26d954f81a, type: 3}
-    endInteractionEvent: 
-  - speakerNames:
-    - Toi
-    - Pilleur de tombes
-    dialogueLines:
-    - "Je n\u2019ai rien trouv\xE9 qui ait un tant soit peu de valeur dans le cimeti\xE8re.
-      Tu as d\xFB faire erreur sur le lieu."
-    - "Je me doutais que tu n\u2019en \xE9tais pas capable."
-    dialogueVoices:
-    - {fileID: 0}
-    - {fileID: 8300000, guid: 7e8b520ab38413e4fb1e9d0febf6f78c, type: 3}
-    endInteractionEvent: 
-  triggers:
-  - eventName: Dialogue Pilleur 0
-    newDialogueIndex: 1
-  - eventName: Dialogue Pilleur 1
-    newDialogueIndex: 2
-  - eventName: Dialogue Pilleur 2
-    newDialogueIndex: 2
-  - eventName: Prendre le collier
-    newDialogueIndex: 3
-  - eventName: Rituel fait
-    newDialogueIndex: 4
+  triggers: []
 --- !u!114 &186668381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12961,17 +12913,15 @@ MonoBehaviour:
     dialogueVoices:
     - {fileID: 0}
     - {fileID: 8300000, guid: 7e8b520ab38413e4fb1e9d0febf6f78c, type: 3}
-    endInteractionEvent: 
+    endInteractionEvent: Artefact pas rendu
   triggers:
-  - eventName: Dialogue Pilleur 0
-    newDialogueIndex: 0
   - eventName: Dialogue Pilleur 1
     newDialogueIndex: 1
   - eventName: Dialogue Pilleur 2
     newDialogueIndex: 1
   - eventName: Collier pris
     newDialogueIndex: 2
-  - eventName: Rituel fait
+  - eventName: Demon disparait
     newDialogueIndex: 3
 --- !u!114 &484023054
 MonoBehaviour:
@@ -15630,7 +15580,7 @@ MonoBehaviour:
   flou:
   - 0
   - 1
-  - 1.5
+  - 2.5
   ombre:
   - 0
   - 0.6
@@ -15674,9 +15624,6 @@ MonoBehaviour:
     eventText: "Un garde vous a trouv\xE9 perdu dans la for\xEAt et vous a ramen\xE9
       au Bouc Affam\xE9 des Faubourgs."
     audio: {fileID: 8300000, guid: 8f30d9a873797464fbc7324d874c921a, type: 3}
-  - eventName: Dialogue Pilleur 0
-    eventText: "Le pilleur retourne au fin fond de la for\xEAt."
-    audio: {fileID: 8300000, guid: 06a12bc7c4d6c394788af4f821a29656, type: 3}
   - eventName: Dialogue Fermier 4
     eventText: Le fermier rentre chez lui nettoyer sa tunique.
     audio: {fileID: 8300000, guid: ab589e551d36bd541a7e3e2e29c4d39c, type: 3}
@@ -15690,6 +15637,15 @@ MonoBehaviour:
       jusqu\u2019\xE0 ce que la gueule de bois ne t\u2019arrache \xE0 ton sommeil
       royal.  \xC0 la prochaine aventure, h\xE9ros de la chopine !"
     audio: {fileID: 8300000, guid: 503ad966f541d704d94f53766e191eea, type: 3}
+  - eventName: Dialogue Pilleur 0
+    eventText: "Le pilleur retourne au fin fond de la for\xEAt."
+    audio: {fileID: 8300000, guid: 06a12bc7c4d6c394788af4f821a29656, type: 3}
+  - eventName: Artefact rendu
+    eventText: "Le pilleur retourne au fin fond de la for\xEAt."
+    audio: {fileID: 8300000, guid: 06a12bc7c4d6c394788af4f821a29656, type: 3}
+  - eventName: Dialogue Pilleur 0
+    eventText: "Le pilleur retourne au fin fond de la for\xEAt."
+    audio: {fileID: 8300000, guid: 06a12bc7c4d6c394788af4f821a29656, type: 3}
   transitionCanvas: {fileID: 519593595}
   narrativeText: {fileID: 664320067}
   typewriterSpeed: 0.06
@@ -19226,9 +19182,9 @@ MonoBehaviour:
     - "Fichtre, m\u2019en parle pas !! Et puis le dernier garde n\u2019est toujours
       pas arriv\xE9, on devait \xEAtre trois."
     dialogueVoices:
-    - {fileID: 8300000, guid: 00fbc25678736194b8e6ace5ac6050a8, type: 3}
-    - {fileID: 8300000, guid: d38e7ecd6d1f011449e618882fd5dc17, type: 3}
     - {fileID: 8300000, guid: 8512af87ba20ea5418c18117f4989beb, type: 3}
+    - {fileID: 8300000, guid: d38e7ecd6d1f011449e618882fd5dc17, type: 3}
+    - {fileID: 8300000, guid: 00fbc25678736194b8e6ace5ac6050a8, type: 3}
     endInteractionEvent: Dialogue Gardes
   - speakerNames:
     - Garde 1
@@ -26587,7 +26543,7 @@ MonoBehaviour:
       avant de repartir sans argent ni dignit\xE9."
     dialogueVoices:
     - {fileID: 8300000, guid: bfdec13dbf87a734ab764c70837d335b, type: 3}
-    - {fileID: 8300000, guid: bfdec13dbf87a734ab764c70837d335b, type: 3}
+    - {fileID: 8300000, guid: ec2b64e7016307240bc3ce1351e7c2df, type: 3}
     endInteractionEvent: Blague
   - speakerNames:
     - Bouffon
