@@ -25,6 +25,7 @@ public class TransitionLore : MonoBehaviour
     private bool isNarrativeActive = false;
     private bool isTyping = false; // Indique si le texte est en train d'être écrit
     private bool canExit = false;  // Permet de quitter seulement à la fin du texte
+    private bool fin = false;
 
     private FirstPersonController playerMovement;
     private AudioSource audioSource;
@@ -37,6 +38,7 @@ public class TransitionLore : MonoBehaviour
         {
             EventSystemManager.Instance.SubscribeToEvent(trigger.eventName, () => ShowNarrative(trigger.eventText, trigger.audio));
         }
+        EventSystemManager.Instance.SubscribeToEvent("Fin", () => fin = true);
     }
 
     private void Update()
@@ -45,6 +47,10 @@ public class TransitionLore : MonoBehaviour
         {
             transitionCanvas.SetActive(false);
             isNarrativeActive = false;
+            if (fin){
+                Debug.Log("fin");
+                SceneManager.LoadSceneAsync(0);
+            }
         }
     }
 
@@ -53,9 +59,7 @@ public class TransitionLore : MonoBehaviour
     {
         isNarrativeActive = true;
         StartCoroutine(NarrativeRoutine(text,audio));
-        if (text == "Fin"){
-            SceneManager.LoadSceneAsync(0);
-        }
+        
     }
 
     private IEnumerator NarrativeRoutine(string text, AudioClip audio)
