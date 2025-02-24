@@ -372,21 +372,21 @@ MonoBehaviour:
     - Apporte moi tonneau
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Peut prendre tonneau
+    endInteractionEvent: 
   - speakerNames:
     - Garde
     dialogueLines:
     - Merci pour tonneau, apporte moi collier
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Peut prendre collier
+    endInteractionEvent: 
   - speakerNames:
     - Garde
     dialogueLines:
     - Merci pour collier, apporte moi champignon
     dialogueVoices:
     - {fileID: 0}
-    endInteractionEvent: Peut prendre champignon
+    endInteractionEvent: 
   - speakerNames:
     - Garde
     dialogueLines:
@@ -12638,6 +12638,335 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3904009868381710741, guid: 2dfc1a6cc73450344866ea12b9f2d021, type: 3}
   m_PrefabInstance: {fileID: 2054687107}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &484023047
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 17730218769033211, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 484023053}
+    - target: {fileID: 17730218769033211, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 819084724}
+    - target: {fileID: 17730218769033211, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: speakerText
+      value: 
+      objectReference: {fileID: 998634569}
+    - target: {fileID: 17730218769033211, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1276518326}
+    - target: {fileID: 17730218769033211, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: dialogueCanvas
+      value: 
+      objectReference: {fileID: 868202575}
+    - target: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_Name
+      value: Hunter (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 559.2015
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.776
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 417.0407
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.84676087
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5319738
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 64.278
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607728610940519514, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3a5cbff9c63f2c244a7231d84dfccb01, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 484023054}
+    - targetCorrespondingSourceObject: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 484023053}
+    - targetCorrespondingSourceObject: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 484023052}
+    - targetCorrespondingSourceObject: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 484023051}
+    - targetCorrespondingSourceObject: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 484023050}
+  m_SourcePrefab: {fileID: 100100000, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+--- !u!1 &484023048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4607728610933143100, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+  m_PrefabInstance: {fileID: 484023047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &484023049 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4607728610933304284, guid: c46b93bb947b2e24b88682e58eede668, type: 3}
+  m_PrefabInstance: {fileID: 484023047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &484023050
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484023048}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.8
+  m_Radius: 0.4
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.95, z: 0}
+--- !u!82 &484023051
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484023048}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &484023052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484023048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2bf4cf175dcec44bef54ef61496265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameNPC: Parler au Pilleur de tombes
+  player: {fileID: 819084724}
+  npc: {fileID: 484023053}
+  dialogueCanvas: {fileID: 868202575}
+  speakerText: {fileID: 998634569}
+  dialogueText: {fileID: 1276518326}
+--- !u!114 &484023053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484023048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b86921965569b40a984ab00075f318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactions:
+  - speakerNames:
+    - Pilleur de tombes
+    dialogueLines:
+    - "T\u2019as du cran gamin, j\u2019ai une mission pour toi. Tu vois le cimeti\xE8re
+      derri\xE8re moi, il y a un art\xE9fact cach\xE9 dans une des tombes qui, parait-il,
+      vaudrait un sacr\xE9 pactole. Apporte-le-moi et je veillerai \xE0 ce que tu
+      sois r\xE9compens\xE9."
+    dialogueVoices:
+    - {fileID: 8300000, guid: d54fc499b0ab0f14fba711aadf89953c, type: 3}
+    endInteractionEvent: Dialogue Pilleur 1
+  - speakerNames:
+    - Pilleur de tombes
+    dialogueLines:
+    - "Ne perds pas de temps, il faut que tu me rapportes l\u2019art\xE9fact avant
+      le point du jour si on ne veut pas se faire voir. Il faut que je termine ce
+      fichu rituel."
+    dialogueVoices:
+    - {fileID: 8300000, guid: 86816b9e46d32bd4e8ae6952cb734e1c, type: 3}
+    endInteractionEvent: Dialogue Pilleur 2
+  - speakerNames:
+    - Pilleur de tombes
+    dialogueLines:
+    - "Eh bien, je ne pensais pas que tu y arriverais. Merci pour l\u2019art\xE9fact,
+      et pour ta r\xE9compense\u2026 Je te laisse la vie sauve, estime-toi heureux."
+    dialogueVoices:
+    - {fileID: 8300000, guid: 956aee4757648c64587dac26d954f81a, type: 3}
+    endInteractionEvent: Artefact rendu
+  - speakerNames:
+    - Toi
+    - Pilleur de tombes
+    dialogueLines:
+    - "Je n\u2019ai rien trouv\xE9 qui ait un tant soit peu de valeur dans le cimeti\xE8re.
+      Tu as d\xFB faire erreur sur le lieu."
+    - "Je me doutais que tu n\u2019en \xE9tais pas capable."
+    dialogueVoices:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: 7e8b520ab38413e4fb1e9d0febf6f78c, type: 3}
+    endInteractionEvent: 
+  triggers:
+  - eventName: Dialogue Pilleur 0
+    newDialogueIndex: 1
+  - eventName: Dialogue Pilleur 1
+    newDialogueIndex: 2
+  - eventName: Dialogue Pilleur 2
+    newDialogueIndex: 2
+  - eventName: Collier pris
+    newDialogueIndex: 3
+  - eventName: Rituel fait
+    newDialogueIndex: 4
+--- !u!114 &484023054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484023048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eea8089fbd13d84a8ec0dce7316549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyNPC: {fileID: 484023049}
 --- !u!4 &485861650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4118406110049250, guid: 5aa3b4b1555c0644ea1f4723f81b9da9, type: 3}
@@ -12987,8 +13316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -332.5}
-  m_SizeDelta: {x: -100, y: -765}
+  m_AnchoredPosition: {x: 0, y: -297.875}
+  m_SizeDelta: {x: -100, y: -744.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &514401650
 MonoBehaviour:
@@ -14991,13 +15320,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmer: {fileID: 1899683473}
+  farmer2: {fileID: 804524827}
   tPose: {fileID: 1706561163}
   demonGirl: {fileID: 149532826}
-  lookAtPlayerDemon: {fileID: 0}
+  lookAtPlayerDemon: {fileID: 149532828}
   hunter: {fileID: 186668375}
+  hunter2: {fileID: 484023048}
   jug: {fileID: 1944788754}
   guard3: {fileID: 15627778}
-  invoc: {fileID: 0}
+  invoc: {fileID: 1964438929}
+  jester: {fileID: 1316206888}
 --- !u!4 &676952527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4252626517937582, guid: fda1d3f77ff15b5418d4d69ec55dc702, type: 3}
@@ -15330,7 +15662,14 @@ MonoBehaviour:
     eventText: Le fermier rentre chez lui nettoyer sa tunique.
     audio: {fileID: 8300000, guid: ab589e551d36bd541a7e3e2e29c4d39c, type: 3}
   - eventName: Fin
-    eventText: Le fermier rentre chez lui nettoyer sa tunique.
+    eventText: "Ainsi s'ach\xE8ve ta glorieuse \xE9pop\xE9e au Bouc Affam\xE9 des
+      Faubourgs. Tu as bu assez d'hydromel pour assommer un troll, et ta m\xE9moire
+      est d\xE9sormais aussi trouble qu'une potion de sorci\xE8re mal brass\xE9e. 
+      Peut-\xEAtre as-tu pill\xE9 quelques tombes, invoqu\xE9 une d\xE9mone peu impressionn\xE9e,
+      ou simplement rendu la vie du fermier encore plus mis\xE9rable ? Peu importe
+      ! Car cette nuit, brave paysan, tu es devenu une l\xE9gende locale... du moins
+      jusqu\u2019\xE0 ce que la gueule de bois ne t\u2019arrache \xE0 ton sommeil
+      royal.  \xC0 la prochaine aventure, h\xE9ros de la chopine !"
     audio: {fileID: 8300000, guid: ab589e551d36bd541a7e3e2e29c4d39c, type: 3}
   transitionCanvas: {fileID: 519593595}
   narrativeText: {fileID: 664320067}
@@ -17083,6 +17422,324 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802463002}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &804524826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.011293407
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.011293407
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.011293407
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 522.5401
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07999986
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 547.7269
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7289686
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6845471
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 86.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_Name
+      value: Civilian 3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_TagString
+      value: BagarreFermier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3a5cbff9c63f2c244a7231d84dfccb01, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 804524834}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 804524833}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 804524832}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 804524831}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 804524830}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 804524829}
+  m_SourcePrefab: {fileID: 100100000, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+--- !u!1 &804524827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+  m_PrefabInstance: {fileID: 804524826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &804524828 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
+  m_PrefabInstance: {fileID: 804524826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &804524829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804524827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072373db3b254fb46a74eada54e3a66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!143 &804524830
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804524827}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 180
+  m_Radius: 50
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 97, z: 0}
+--- !u!82 &804524831
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804524827}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &804524832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804524827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eea8089fbd13d84a8ec0dce7316549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyNPC: {fileID: 804524828}
+--- !u!114 &804524833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804524827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2bf4cf175dcec44bef54ef61496265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameNPC: Parler au Fermier
+  player: {fileID: 819084724}
+  npc: {fileID: 804524834}
+  dialogueCanvas: {fileID: 868202575}
+  speakerText: {fileID: 998634569}
+  dialogueText: {fileID: 1276518326}
+--- !u!114 &804524834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804524827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b86921965569b40a984ab00075f318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactions:
+  - speakerNames:
+    - Fermier
+    - Toi
+    - Pegu
+    - Fermier
+    dialogueLines:
+    - "OoooOOOOoooh toi la !!!! T\u2019as d\xE9j\xE0 ruin\xE9 ma tunique et on m'a
+      vol\xE9 mes champignons !!! C\u2019est toi j'en suis s\xFBr !! On va se battre
+      !!"
+    - "Quoi ?! non, c'est pas moi, c\u2019est le pegu le voleur, regardes, il est
+      totalement arrach\xE9\u202F!"
+    - "HEeeiin.. Quoi.. kesako ?! Les champis\u2026 Sont zuper bons EHHEHe !!!"
+    - OOh tu vas mal repartir mon copain !
+    dialogueVoices:
+    - {fileID: 8300000, guid: 5e64dbef3e8a0d5469cea88d66ea32e0, type: 3}
+    - {fileID: 8300000, guid: 307c5965444a43344ab9cf903b9a98e8, type: 3}
+    - {fileID: 0}
+    - {fileID: 8300000, guid: 2c79ec339b06541428b7bf6788a727b9, type: 3}
+    endInteractionEvent: Dialogue Fermier 5
+  - speakerNames:
+    - Fermier
+    dialogueLines:
+    - Fallait pas me voler, saligaud.
+    dialogueVoices:
+    - {fileID: 8300000, guid: b18197493e241524bada10b3dff439ca, type: 3}
+    endInteractionEvent: Dialogue Fermier 6
+  triggers:
+  - eventName: Dialogue Fermier 5
+    newDialogueIndex: 1
+  - eventName: Dialogue Fermier 6
+    newDialogueIndex: 1
 --- !u!1001 &809930987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20210,7 +20867,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 28.641968, y: 0, z: 0, w: 0}
+  m_margin: {x: 34.479126, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -24848,7 +25505,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 66.845215, y: 24.84124, z: 80.23303, w: 24.82463}
+  m_margin: {x: 76.06561, y: 24.84124, z: 94.000916, w: 24.82463}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -25639,8 +26296,7 @@ MonoBehaviour:
     - Bouffon
     dialogueLines:
     - "Pourquoi les sorci\xE8res ne trouvent-elles jamais l\u2019amour ?"
-    - "Parce que quand elles lancent un sort, c\u2019est toujours un coup de foudre\u2026
-      mais dans le mauvais sens."
+    - "Parce que quand elles lancent un sort, c\u2019est toujours un coup de foudre\u2026"
     dialogueVoices:
     - {fileID: 8300000, guid: c64a11f47c8e92548a043b993a931d11, type: 3}
     - {fileID: 8300000, guid: f012a4122470d3a45a6a6bad0202a0ab, type: 3}
@@ -31300,6 +31956,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tpose
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 07bbabfee039929d1a51d1f96e1c3901, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 07bbabfee039929d1a51d1f96e1c3901, type: 3}
       propertyPath: m_Avatar
       value: 
@@ -33783,7 +34443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
       propertyPath: m_TagString
-      value: BagarreFermier
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 1cca356d2f7df8a23ac2a399a7f49d0c, type: 3}
       propertyPath: m_Controller
@@ -34000,32 +34660,6 @@ MonoBehaviour:
     dialogueVoices:
     - {fileID: 8300000, guid: 2bb48b1c81b538744b8c1eccf049f368, type: 3}
     endInteractionEvent: Dialogue Fermier 4
-  - speakerNames:
-    - Fermier
-    - Toi
-    - Pegu
-    - Fermier
-    dialogueLines:
-    - "OoooOOOOoooh toi la !!!! T\u2019as d\xE9j\xE0 ruin\xE9 ma tunique et on m'a
-      vol\xE9 mes champignons !!! C\u2019est toi j'en suis s\xFBr !! On va se battre
-      !!"
-    - "Quoi ?! non, c'est pas moi, c\u2019est le pegu le voleur, regardes, il est
-      totalement arrach\xE9\u202F!"
-    - "HEeeiin.. Quoi.. kesako ?! Les champis\u2026 Sont zuper bons EHHEHe !!!"
-    - OOh tu vas mal repartir mon copain !
-    dialogueVoices:
-    - {fileID: 8300000, guid: 5e64dbef3e8a0d5469cea88d66ea32e0, type: 3}
-    - {fileID: 8300000, guid: 307c5965444a43344ab9cf903b9a98e8, type: 3}
-    - {fileID: 0}
-    - {fileID: 8300000, guid: 2c79ec339b06541428b7bf6788a727b9, type: 3}
-    endInteractionEvent: Dialogue Fermier 5
-  - speakerNames:
-    - Fermier
-    dialogueLines:
-    - Fallait pas me voler, saligaud.
-    dialogueVoices:
-    - {fileID: 8300000, guid: b18197493e241524bada10b3dff439ca, type: 3}
-    endInteractionEvent: Dialogue Fermier 6
   triggers:
   - eventName: Dialogue Fermier 0
     newDialogueIndex: 1
@@ -34037,12 +34671,6 @@ MonoBehaviour:
     newDialogueIndex: 1
   - eventName: Vomit
     newDialogueIndex: 4
-  - eventName: Dialogue Fermier 4
-    newDialogueIndex: 5
-  - eventName: Dialogue Fermier 5
-    newDialogueIndex: 6
-  - eventName: Dialogue Fermier 6
-    newDialogueIndex: 6
 --- !u!143 &1899683479
 CharacterController:
   m_ObjectHideFlags: 0
@@ -35250,6 +35878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: minipent
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -7037823188280805034, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
@@ -35284,7 +35916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531033443d60419408285485544d92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTrigger: Prendre le collier
+  nameTrigger: Collier pris
   description: Utiliser L'artefacte
 --- !u!114 &1964438928
 MonoBehaviour:
@@ -35316,7 +35948,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 3, y: 6, z: 3}
   m_Center: {x: 4.72, y: 2.74, z: 0}
@@ -35355,8 +35987,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -550, y: -150}
-  m_SizeDelta: {x: -1300, y: -900}
+  m_AnchoredPosition: {x: -550, y: -100.5}
+  m_SizeDelta: {x: -1300, y: -911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966493370
 MonoBehaviour:
@@ -38497,6 +39129,7 @@ SceneRoots:
   - {fileID: 1704697934}
   - {fileID: 15627777}
   - {fileID: 1899683472}
+  - {fileID: 804524826}
   - {fileID: 1706561162}
   - {fileID: 1260313382}
   - {fileID: 1923823794}
@@ -38505,3 +39138,4 @@ SceneRoots:
   - {fileID: 1814695418}
   - {fileID: 1321551961}
   - {fileID: 1108391489}
+  - {fileID: 484023047}

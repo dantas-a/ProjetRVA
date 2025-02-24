@@ -71,7 +71,7 @@ public class NPC : MonoBehaviour
         }
     }
 
-    private void ChangeInteraction(int newIndex)
+    public void ChangeInteraction(int newIndex)
     {
         interactionIndex = newIndex;
         dialogueIndex = 0; // Reset du dialogue au début de la nouvelle interaction

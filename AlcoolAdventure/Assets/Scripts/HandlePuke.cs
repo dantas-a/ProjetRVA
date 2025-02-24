@@ -15,8 +15,7 @@ public class HandlePuke : MonoBehaviour
     {
         pukeEffect = GetComponentInChildren<ParticleSystem>();
 
-        EventSystemManager.Instance.SubscribeToEvent("Dialogue Pegu 1", () => canPuke = true);
-        EventSystemManager.Instance.SubscribeToEvent("Vomit", () => canPuke = false);
+        EventSystemManager.Instance.SubscribeToEvent("Dialogue Pegu 0", () => canPuke = true);
         pukeCanvas.gameObject.SetActive(false);
     }
 
@@ -32,9 +31,9 @@ public class HandlePuke : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.V)) && (canPuke == true))
         {
+            pukeEffect.Play();
             if (distanceToFarmer <= activationDistance)
             {
-                pukeEffect.Play();
                 EventSystemManager.Instance.TriggerEvent("Vomit");
             }
         }
