@@ -8,6 +8,7 @@ public class HandlePuke : MonoBehaviour
 
     public GameObject pukeCanvas;
 
+    private bool canPukeCanvas = false;
     private bool canPuke = false;
     private float distanceToFarmer;
 
@@ -15,14 +16,16 @@ public class HandlePuke : MonoBehaviour
     {
         pukeEffect = GetComponentInChildren<ParticleSystem>();
 
-        EventSystemManager.Instance.SubscribeToEvent("Dialogue Pegu 0", () => canPuke = true);
+        EventSystemManager.Instance.SubscribeToEvent("Dialogue Pegu 1", () => canPuke = true);
+        EventSystemManager.Instance.SubscribeToEvent("Dialogue Pegu 1", () => canPukeCanvas = true);
+        EventSystemManager.Instance.SubscribeToEvent("Vomit", () => canPukeCanvas = false);
         pukeCanvas.gameObject.SetActive(false);
     }
 
     void Update()
     {
         distanceToFarmer = Vector3.Distance(transform.position, farmer.transform.position);
-        
+
         DisplayCanvas();
         Puke();
     }
@@ -41,7 +44,7 @@ public class HandlePuke : MonoBehaviour
 
     private void DisplayCanvas()
     {
-        if((distanceToFarmer <= activationDistance) && canPuke)
+        if((distanceToFarmer <= activationDistance) && canPukeCanvas)
         {
             pukeCanvas.gameObject.SetActive(true);
         }

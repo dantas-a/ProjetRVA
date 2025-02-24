@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Coffin : MonoBehaviour, IInteractable {
 
-    public bool canBeInteractedWith { get; set; } = true;
+    public bool canBeInteractedWith { get; set; } = false;
     public float smooth = 10f; // Vitesse de rotation
     private float targetXRotation; // Rotation cible autour de l'axe X
     private float defaultXRotation; // Rotation par défaut (position fermée)
@@ -17,6 +17,7 @@ public class Coffin : MonoBehaviour, IInteractable {
         // Enregistre la rotation initiale
         defaultXRotation = transform.eulerAngles.x;
         targetXRotation = defaultXRotation;
+        EventSystemManager.Instance.SubscribeToEvent("Dialogue Pilleur 1", () => canBeInteractedWith = true);
     }
 
     void Update() {

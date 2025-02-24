@@ -46,7 +46,7 @@ public class HandleTPCharacter : MonoBehaviour
 
         // Guarde du cimetière
         guard3.SetActive(false);
-        EventSystemManager.Instance.SubscribeToEvent("Acte 3", () => guard3.SetActive(true));
+        EventSystemManager.Instance.SubscribeToEvent("Acte 2", () => guard3.SetActive(true));
 
         // Fermier
         EventSystemManager.Instance.SubscribeToEvent("Dialogue Fermier 4", () => farmer.SetActive(false));

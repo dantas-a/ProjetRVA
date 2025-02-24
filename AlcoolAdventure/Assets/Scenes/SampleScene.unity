@@ -136,6 +136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 56995825459094021, guid: 6aed7d5a7a495f94d8d55a61815701c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 829134890054924479, guid: 6aed7d5a7a495f94d8d55a61815701c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 591.431
@@ -369,38 +373,47 @@ MonoBehaviour:
   - speakerNames:
     - Garde
     dialogueLines:
-    - Apporte moi tonneau
+    - "Vous n\u2019avez rien \xE0 faire ici ! Retournez au Bouc Affam\xE9 des Faubourgs
+      !!"
     dialogueVoices:
-    - {fileID: 0}
-    endInteractionEvent: 
+    - {fileID: 8300000, guid: 9df1e6e0ffd88564cbe5f334756573e4, type: 3}
+    endInteractionEvent: Garde 3 1
   - speakerNames:
     - Garde
     dialogueLines:
-    - Merci pour tonneau, apporte moi collier
+    - "Le cimeti\xE8re n\u2019est pas accessible, revenez sur vos pas."
     dialogueVoices:
-    - {fileID: 0}
-    endInteractionEvent: 
+    - {fileID: 8300000, guid: e3631b3656113b04fa8a595170d525c3, type: 3}
+    endInteractionEvent: Garde 3 2
   - speakerNames:
     - Garde
     dialogueLines:
-    - Merci pour collier, apporte moi champignon
+    - "Ne me faites pas me r\xE9p\xE9ter !"
     dialogueVoices:
-    - {fileID: 0}
-    endInteractionEvent: 
+    - {fileID: 8300000, guid: e906b3776fc73d44c854b589a7510ac2, type: 3}
+    endInteractionEvent: Garde 3 3
   - speakerNames:
     - Garde
+    - Garde
     dialogueLines:
-    - Merci pour champignon
+    - "\xC7a sert \xE0 rien de rester ici \xE0 surveiller des cadavres."
+    - "C\u2019est pas comme s\u2019il y avait des tresors ou des rituels heretiques
+      dans ces tombeaux. "
     dialogueVoices:
-    - {fileID: 0}
-    endInteractionEvent: 
+    - {fileID: 8300000, guid: 87a79bccaedf15f41aef2f06e1d1b783, type: 3}
+    - {fileID: 8300000, guid: 335e5ffb98e68854492ce01b5343581e, type: 3}
+    endInteractionEvent: Garde 3 4
   triggers:
-  - eventName: Tonneau pris
-    newDialogueIndex: 1
-  - eventName: Collier pris
-    newDialogueIndex: 2
-  - eventName: Champignon pris
+  - eventName: Acte 3
     newDialogueIndex: 3
+  - eventName: Garde 3 1
+    newDialogueIndex: 1
+  - eventName: Garde 3 2
+    newDialogueIndex: 2
+  - eventName: Garde 3 3
+    newDialogueIndex: 2
+  - eventName: Garde 3 4
+    newDialogueIndex: 2
 --- !u!114 &15627784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4723,7 +4736,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Menu Principal
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 461671efe58aff44080f23f80e254f22, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
   m_sharedMaterial: {fileID: -633226384356739526, guid: 461671efe58aff44080f23f80e254f22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4789,7 +4802,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -10.965759, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &230889170
@@ -5775,7 +5788,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 461671efe58aff44080f23f80e254f22, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
   m_sharedMaterial: {fileID: -633226384356739526, guid: 461671efe58aff44080f23f80e254f22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5841,7 +5854,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &303646577
@@ -12945,15 +12958,15 @@ MonoBehaviour:
     endInteractionEvent: 
   triggers:
   - eventName: Dialogue Pilleur 0
-    newDialogueIndex: 1
+    newDialogueIndex: 0
   - eventName: Dialogue Pilleur 1
-    newDialogueIndex: 2
+    newDialogueIndex: 1
   - eventName: Dialogue Pilleur 2
-    newDialogueIndex: 2
+    newDialogueIndex: 1
   - eventName: Collier pris
-    newDialogueIndex: 3
+    newDialogueIndex: 2
   - eventName: Rituel fait
-    newDialogueIndex: 4
+    newDialogueIndex: 3
 --- !u!114 &484023054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14999,7 +15012,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8dcded170a41fe343856d6d072bff3a1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
   m_sharedMaterial: {fileID: 2726899986904842313, guid: 8dcded170a41fe343856d6d072bff3a1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -15610,8 +15623,8 @@ MonoBehaviour:
   - 0.2
   flou:
   - 0
-  - 4
-  - 4
+  - 1
+  - 1.5
   ombre:
   - 0
   - 0.6
@@ -15670,7 +15683,7 @@ MonoBehaviour:
       ! Car cette nuit, brave paysan, tu es devenu une l\xE9gende locale... du moins
       jusqu\u2019\xE0 ce que la gueule de bois ne t\u2019arrache \xE0 ton sommeil
       royal.  \xC0 la prochaine aventure, h\xE9ros de la chopine !"
-    audio: {fileID: 8300000, guid: ab589e551d36bd541a7e3e2e29c4d39c, type: 3}
+    audio: {fileID: 8300000, guid: 503ad966f541d704d94f53766e191eea, type: 3}
   transitionCanvas: {fileID: 519593595}
   narrativeText: {fileID: 664320067}
   typewriterSpeed: 0.06
@@ -17725,7 +17738,7 @@ MonoBehaviour:
     dialogueVoices:
     - {fileID: 8300000, guid: 5e64dbef3e8a0d5469cea88d66ea32e0, type: 3}
     - {fileID: 8300000, guid: 307c5965444a43344ab9cf903b9a98e8, type: 3}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 7f36ee4ba03c3a54595d5380d3c809cd, type: 3}
     - {fileID: 8300000, guid: 2c79ec339b06541428b7bf6788a727b9, type: 3}
     endInteractionEvent: Dialogue Fermier 5
   - speakerNames:
@@ -19078,23 +19091,23 @@ MonoBehaviour:
     - "Fichtre, m\u2019en parle pas !! Et puis le dernier garde n\u2019est toujours
       pas arriv\xE9, on devait \xEAtre trois."
     dialogueVoices:
-    - {fileID: 8300000, guid: cd3e6dc8a49561a4db80879c3f6b12e2, type: 3}
-    - {fileID: 8300000, guid: f2c70a29d44e87b4e953d2a61f56558e, type: 3}
-    - {fileID: 8300000, guid: 98c53b4058afe9946a6d84163defae83, type: 3}
+    - {fileID: 8300000, guid: 00fbc25678736194b8e6ace5ac6050a8, type: 3}
+    - {fileID: 8300000, guid: d38e7ecd6d1f011449e618882fd5dc17, type: 3}
+    - {fileID: 8300000, guid: 8512af87ba20ea5418c18117f4989beb, type: 3}
     endInteractionEvent: Dialogue Gardes
   - speakerNames:
     - Garde 1
     dialogueLines:
     - "Allez mon brave, le Bouc Affam\xE9 des Faubourgs est droit devant."
     dialogueVoices:
-    - {fileID: 8300000, guid: 142c59ed68b536c41b41752b02595252, type: 3}
+    - {fileID: 8300000, guid: 610782693796ccd4c88c4452c7ef3279, type: 3}
     endInteractionEvent: Dialogue Garde1 1
   - speakerNames:
     - 'Garde 1 '
     dialogueLines:
     - "Passez une bonne soir\xE9e mon brave ! "
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 9d9dc4f6a8cd6c3449ac3a15c0bbce05, type: 3}
     endInteractionEvent: 'Dialogue Garde1 2 '
   - speakerNames:
     - Garde
@@ -19106,7 +19119,7 @@ MonoBehaviour:
     - ...
     - "Ah non, laisse tomber, j\u2019ai pas envie d\u2019y mettre les pieds."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: d3cb5060dcb0fcd41914fd22667daa46, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     endInteractionEvent: Dialogue Garde1 3
@@ -20804,7 +20817,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pilleur de Tombes
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 461671efe58aff44080f23f80e254f22, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
   m_sharedMaterial: {fileID: -633226384356739526, guid: 461671efe58aff44080f23f80e254f22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -20870,7 +20883,7 @@ MonoBehaviour:
   m_margin: {x: 34.479126, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &998634570
@@ -25442,7 +25455,7 @@ MonoBehaviour:
     un rituel satanique \u2026 mais \u2026 on dirait qu\u2019il manque un quelque
     chose au centre du cercle \u2026 peut \xEAtre l\u2019artefact du voleur \u2026"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 461671efe58aff44080f23f80e254f22, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
   m_sharedMaterial: {fileID: -633226384356739526, guid: 461671efe58aff44080f23f80e254f22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -25508,7 +25521,7 @@ MonoBehaviour:
   m_margin: {x: 76.06561, y: 24.84124, z: 94.000916, w: 24.82463}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1276518327
@@ -27475,7 +27488,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: UwU
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -27542,7 +27555,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1388975231
@@ -28656,7 +28669,7 @@ MonoBehaviour:
     dialogueLines:
     - "Va voir ailleurs si j\u2019y suis."
     dialogueVoices:
-    - {fileID: 8300000, guid: 2386865f86d2586449295a2b0102b2cc, type: 3}
+    - {fileID: 8300000, guid: 470322b1853fcb54a84cfc3c0d155091, type: 3}
     endInteractionEvent: Dialogue Pegu 0
   - speakerNames:
     - Pegu
@@ -28667,14 +28680,14 @@ MonoBehaviour:
       T'as qu'\xE0 lui vomir dessus ahaha, nan j\u2019d\xE9conne aller mon fr\xE8re,
       tu trouveras bien un moyen. "
     dialogueVoices:
-    - {fileID: 8300000, guid: 896373335378e4e419c9d65ced9bfff2, type: 3}
+    - {fileID: 8300000, guid: c170b1c8bff0ec54e822fada7281730a, type: 3}
     endInteractionEvent: Dialogue Pegu 1
   - speakerNames:
     - Pegu
     dialogueLines:
     - 'Alors ces champignons ? '
     dialogueVoices:
-    - {fileID: 8300000, guid: d149161315be6da4d94e14e565473ad6, type: 3}
+    - {fileID: 8300000, guid: 37b1737a0f4d54f4c8276a5ebb32cbc1, type: 3}
     endInteractionEvent: Dialogue Pegu 2
   - speakerNames:
     - Pegu
@@ -28684,22 +28697,15 @@ MonoBehaviour:
       partage et chacun sa dose. On va d\xE9coller man. "
     - "WWWoooouuuaaaaaa. C\u2019est un truc de malade"
     dialogueVoices:
-    - {fileID: 8300000, guid: 1ef773fa30f928d4394bd68bb8f4f12a, type: 3}
-    - {fileID: 8300000, guid: 680d6a60772599b46b52a14edcf3d235, type: 3}
+    - {fileID: 8300000, guid: 94768977b0ba69449a453a43d2ad1802, type: 3}
+    - {fileID: 8300000, guid: fb8fe91df459bac41b262a23424d4b56, type: 3}
     endInteractionEvent: "Champignons consomm\xE9s"
   - speakerNames:
     - Pegu
     dialogueLines:
     - EHEHHEHEHE! Ca bouze tans doux les zens.
     dialogueVoices:
-    - {fileID: 8300000, guid: ca926a3606c7c2948bf219af7f8a1a1d, type: 3}
-    endInteractionEvent: 
-  - speakerNames:
-    - Pegu
-    dialogueLines:
-    - ...
-    dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 7ac5c3bd3ff9c454797c1591e9905942, type: 3}
     endInteractionEvent: 
   triggers:
   - eventName: Dialogue Pegu 0
@@ -30182,7 +30188,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quitter
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 461671efe58aff44080f23f80e254f22, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
   m_sharedMaterial: {fileID: -633226384356739526, guid: 461671efe58aff44080f23f80e254f22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -30248,7 +30254,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -10.965759, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1593062135
@@ -31828,16 +31834,16 @@ MonoBehaviour:
     - "Fichtre, m\u2019en parle pas !! Et puis le dernier garde n\u2019est toujours
       pas arriv\xE9, on devait \xEAtre trois."
     dialogueVoices:
-    - {fileID: 8300000, guid: cd3e6dc8a49561a4db80879c3f6b12e2, type: 3}
-    - {fileID: 8300000, guid: f2c70a29d44e87b4e953d2a61f56558e, type: 3}
-    - {fileID: 8300000, guid: 98c53b4058afe9946a6d84163defae83, type: 3}
+    - {fileID: 8300000, guid: 8512af87ba20ea5418c18117f4989beb, type: 3}
+    - {fileID: 8300000, guid: d38e7ecd6d1f011449e618882fd5dc17, type: 3}
+    - {fileID: 8300000, guid: 00fbc25678736194b8e6ace5ac6050a8, type: 3}
     endInteractionEvent: Dialogue Gardes
   - speakerNames:
     - Garde 2
     dialogueLines:
     - Allez-y mollo sur le rhum.
     dialogueVoices:
-    - {fileID: 8300000, guid: 8e3c9991c359abe4394c7a5073ed536a, type: 3}
+    - {fileID: 8300000, guid: ab18e1480caa3384cbe44db1f54255d1, type: 3}
     endInteractionEvent: Dialogue Garde2 1
   - speakerNames:
     - Garde 2
@@ -31845,7 +31851,7 @@ MonoBehaviour:
     - "Attention \xE0 ne pas vous perdre, les bois sont sombres \xE0 cette heure
       ci. "
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: a7d94eecef0b9724287814f0f0562680, type: 3}
     endInteractionEvent: Dialogue Garde2 2
   - speakerNames:
     - Garde 2
@@ -35142,7 +35148,7 @@ MonoBehaviour:
     - "Bon, vous \xEAtes pire qu\u2019un ivrogne en qu\xEAte d\u2019une bi\xE8re
       gratuite ! Y\u2019a rien de nouveau \xE0 dire, allez donc voir ailleurs."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: fe05d383e1c11354f9d73f82da4e3ff1, type: 3}
     endInteractionEvent: Dialogue Servante 5
   - speakerNames:
     - Servante
@@ -35150,7 +35156,7 @@ MonoBehaviour:
     - "Vous avez pas un cimeti\xE8re \xE0 piller ou un d\xE9mon \xE0 invoquer ? Non
       ? Bon alors laissez-moi bosser."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 252dabf00c3f59848bb92773926e9e20, type: 3}
     endInteractionEvent: Dialogue Servante 6
   - speakerNames:
     - Servante
@@ -35159,7 +35165,7 @@ MonoBehaviour:
       vie ! Mais c\u2019est surtout un endroit o\xF9 je vais devoir encore nettoyer
       du vomi demain matin\u2026 Pfff."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: ac76c6ee54f817c4b8a10a3dde785d02, type: 3}
     endInteractionEvent: Dialogue Servante 7
   triggers:
   - eventName: Dialogue Servante 0
@@ -35383,7 +35389,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Continuer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 461671efe58aff44080f23f80e254f22, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8adda23f3502efc40b3f2dc445337a3a, type: 2}
   m_sharedMaterial: {fileID: -633226384356739526, guid: 461671efe58aff44080f23f80e254f22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -35449,7 +35455,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -10.965759, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1935661619
@@ -35880,7 +35886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5837ad8450747dd4ebf40beca40f56fb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
