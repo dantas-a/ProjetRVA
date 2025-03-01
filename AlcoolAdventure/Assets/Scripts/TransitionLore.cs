@@ -49,6 +49,7 @@ public class TransitionLore : MonoBehaviour
             isNarrativeActive = false;
             if (fin){
                 Debug.Log("fin");
+                playerMovement.Transition = true;
                 SceneManager.LoadSceneAsync(0);
             }
         }

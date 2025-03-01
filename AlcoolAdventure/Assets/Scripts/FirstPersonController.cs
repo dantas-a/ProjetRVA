@@ -34,6 +34,7 @@ public class FirstPersonController : MonoBehaviour
 		characterAnimator.keepAnimatorStateOnDisable = true;
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
+		Transition = false;
 	}
 	
 	void Update()
