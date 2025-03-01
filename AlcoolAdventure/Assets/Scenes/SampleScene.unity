@@ -12911,7 +12911,7 @@ MonoBehaviour:
       Tu as d\xFB faire erreur sur le lieu."
     - "Je me doutais que tu n\u2019en \xE9tais pas capable."
     dialogueVoices:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 3f2eda88e9f362a4f85d9df23d4f5321, type: 3}
     - {fileID: 8300000, guid: 7e8b520ab38413e4fb1e9d0febf6f78c, type: 3}
     endInteractionEvent: Artefact pas rendu
   triggers:
