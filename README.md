@@ -10,7 +10,7 @@ Ce projet met en avant des compétences en **développement gameplay, conception
 
 ---
 
-## 🚀 Fonctionnalités principales*
+## 🚀 Fonctionnalités principales
 
 - Gameplay interactif : Interaction avec personnages non joueurs, avec objets, quêtes principales et secondaires, doublages.
 - Intégration de shaders et d'effets visuels.
