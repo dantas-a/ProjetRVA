@@ -20,7 +20,7 @@ Ce projet met en avant des compétences en **développement gameplay, conception
 
 ## 🧰 Technologies utilisées
 
-- **Moteur** : Unity (version X.X)  
+- **Moteur** : Unity 
 - **Langage** : C#
 - **IDE** : Visual Studio Code
 
