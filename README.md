@@ -35,3 +35,5 @@ Ce projet met en avant des compétences en **développement gameplay, conception
 ## 📷 Aperçu
 
 ![Extrait1](./Extrait1.png)
+![Extrait2](./Extrait2.png)
+![Extrait3](./Extrait3.png)
