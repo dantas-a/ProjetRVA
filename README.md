@@ -34,4 +34,4 @@ Ce projet met en avant des compétences en **développement gameplay, conception
 
 ## 📷 Aperçu
 
-![Extrait](https://ibb.co/6cV57K75)
+
