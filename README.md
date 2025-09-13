@@ -31,3 +31,7 @@ Ce projet met en avant des compétences en **développement gameplay, conception
 - Développement d’un gameplay immersif et intéractif en C#  
 - Intégration de shaders temps réel pour améliorer l’ambiance visuelle   
 - Gestion d’un projet collaboratif avec GitHub
+
+## 📷 Aperçu
+
+![Extrait](https://ibb.co/6cV57K75)
